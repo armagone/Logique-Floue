@@ -62,6 +62,9 @@ private:
   //if true a bot is removed from the game
   bool                             m_bRemoveABot;
 
+  //check the number of bots
+  int							m_lastTeamSpawned;
+
   //when a bot is killed a "grave" is displayed for a few seconds. This
   //class manages the graves
   GraveMarkers*                    m_pGraveMarkers;

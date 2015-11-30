@@ -39,7 +39,8 @@ Raven_Game::Raven_Game():m_pSelectedBot(NULL),
                          m_bRemoveABot(false),
                          m_pMap(NULL),
                          m_pPathManager(NULL),
-                         m_pGraveMarkers(NULL)
+                         m_pGraveMarkers(NULL),
+						 m_lastTeamSpawned(1)
 {
   //load in the default map
   LoadMap(script->GetString("StartMap"));
@@ -246,21 +247,14 @@ bool Raven_Game::AttemptToAddBot(Raven_Bot* pBot)
 //-----------------------------------------------------------------------------
 void Raven_Game::AddBots(unsigned int NumBotsToAdd)
 { 
-	int equipe = NumBotsToAdd * 0.5;
-
   while (NumBotsToAdd--)
   {
     //create a bot. (its position is irrelevant at this point because it will
     //not be rendered until it is spawned)
     Raven_Bot* rb = new Raven_Bot(this, Vector2D());
 
-	if (NumBotsToAdd >= equipe)
-	{
-		rb->SetTeamId(1);
-	}
-	else{
-		rb->SetTeamId(2);
-	}
+	m_lastTeamSpawned = (m_lastTeamSpawned == 1) ? 2 : 1; 
+	rb->SetTeamId(m_lastTeamSpawned);
 
     //switch the default steering behaviors on
     rb->GetSteering()->WallAvoidanceOn();
