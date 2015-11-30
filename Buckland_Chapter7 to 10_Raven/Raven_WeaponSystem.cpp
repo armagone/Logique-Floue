@@ -330,3 +330,10 @@ void Raven_WeaponSystem::RenderDesirabilities()const
       }
     }
 }
+
+
+int Raven_WeaponSystem::GetCurrentWeaponId()const{
+	if (GetCurrentWeapon() == nullptr) return 0;
+	int idWeapon = GetCurrentWeapon()->GetType();
+	return idWeapon;
+}

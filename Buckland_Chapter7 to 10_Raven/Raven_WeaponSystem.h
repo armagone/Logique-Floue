@@ -97,6 +97,9 @@ public:
   //returns a pointer to the current weapon
   Raven_Weapon* GetCurrentWeapon()const{return m_pCurrentWeapon;} 
 
+  //returns a pointer to the current weapon
+  int GetCurrentWeaponId()const;
+
   //returns a pointer to the specified weapon type (if in inventory, null if 
   //not)
   Raven_Weapon* GetWeaponFromInventory(int weapon_type);

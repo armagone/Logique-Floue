@@ -161,8 +161,9 @@ void Raven_Game::Update()
     //then change its status to 'respawning'
     else if ((*curBot)->isDead())
     {
+
       //create a grave
-      m_pGraveMarkers->AddGrave((*curBot)->Pos());
+		m_pGraveMarkers->AddGrave((*curBot)->Pos(), (*curBot)->GetTeamId(), (*curBot)->GetWeaponSys()->GetCurrentWeaponId());
 
       //change its status to spawning
       (*curBot)->SetSpawning();
@@ -400,7 +401,7 @@ bool Raven_Game::LoadMap(const std::string& filename)
   //load the new map data
   if (m_pMap->LoadMap(filename))
   { 
-	  AddBots(6);// script->GetInt("NumBots"));
+	  AddBots(script->GetInt("NumBots"));
   
     return true;
   }
