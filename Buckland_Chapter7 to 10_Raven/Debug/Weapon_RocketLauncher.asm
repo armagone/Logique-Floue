@@ -15344,7 +15344,7 @@ _DistToTarget$ = 8					; size = 8
 ?GetDesirability@RocketLauncher@@UAENN@Z PROC		; RocketLauncher::GetDesirability
 ; _this$ = ecx
 
-; 67   : {
+; 66   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -15368,28 +15368,28 @@ _DistToTarget$ = 8					; size = 8
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 68   : 	if (m_iNumRoundsLeft == 0)
+; 67   : 	if (m_iNumRoundsLeft == 0)
 
 	mov	eax, DWORD PTR _this$[ebp]
 	cmp	DWORD PTR [eax+44], 0
 	jne	SHORT $LN2@GetDesirab
 
-; 69   : 	{
-; 70   : 		m_dLastDesirabilityScore = 0;
+; 68   : 	{
+; 69   : 		m_dLastDesirabilityScore = 0;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	movsd	xmm0, QWORD PTR __real@0000000000000000
 	movsd	QWORD PTR [ecx+72], xmm0
 
-; 71   : 	}
-; 72   : 	else
+; 70   : 	}
+; 71   : 	else
 
 	jmp	$LN1@GetDesirab
 $LN2@GetDesirab:
 
-; 73   : 	{
-; 74   : 		//fuzzify distance and amount of ammo
-; 75   : 		m_FuzzyModule.Fuzzify("DistToTarget", DistToTarget);
+; 72   : 	{
+; 73   : 		//fuzzify distance and amount of ammo
+; 74   : 		m_FuzzyModule.Fuzzify("DistToTarget", DistToTarget);
 
 	push	OFFSET $SG157052
 	lea	ecx, DWORD PTR $T4[ebp]
@@ -15407,7 +15407,7 @@ $LN2@GetDesirab:
 	lea	ecx, DWORD PTR $T4[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 76   : 		m_FuzzyModule.Fuzzify("AmmoStatus", (double)m_iNumRoundsLeft);
+; 75   : 		m_FuzzyModule.Fuzzify("AmmoStatus", (double)m_iNumRoundsLeft);
 
 	push	OFFSET $SG157055
 	lea	ecx, DWORD PTR $T3[ebp]
@@ -15431,8 +15431,8 @@ $LN2@GetDesirab:
 	lea	ecx, DWORD PTR $T3[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 77   : 
-; 78   : 		m_dLastDesirabilityScore = m_FuzzyModule.DeFuzzify("Desirability", FuzzyModule::max_av);
+; 76   : 
+; 77   : 		m_dLastDesirabilityScore = m_FuzzyModule.DeFuzzify("Desirability", FuzzyModule::max_av);
 
 	push	OFFSET $SG157057
 	lea	ecx, DWORD PTR $T2[ebp]
@@ -15451,14 +15451,14 @@ $LN2@GetDesirab:
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN1@GetDesirab:
 
-; 79   : 	}
-; 80   : 
-; 81   : 	return m_dLastDesirabilityScore;
+; 78   : 	}
+; 79   : 
+; 80   : 	return m_dLastDesirabilityScore;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	fld	QWORD PTR [eax+72]
 
-; 82   : }
+; 81   : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -15506,7 +15506,7 @@ _pos$ = 8						; size = 16
 ?ShootAt@RocketLauncher@@UAEXUVector2D@@@Z PROC		; RocketLauncher::ShootAt, COMDAT
 ; _this$ = ecx
 
-; 47   : {
+; 46   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -15514,7 +15514,7 @@ _pos$ = 8						; size = 16
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 48   : 	if (NumRoundsRemaining() > 0 && isReadyForNextShot())
+; 47   : 	if (NumRoundsRemaining() > 0 && isReadyForNextShot())
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?NumRoundsRemaining@Raven_Weapon@@QBEHXZ ; Raven_Weapon::NumRoundsRemaining
@@ -15526,9 +15526,9 @@ _pos$ = 8						; size = 16
 	test	eax, eax
 	je	$LN1@ShootAt
 
-; 49   : 	{
-; 50   : 		//fire off a rocket!
-; 51   : 		m_pOwner->GetWorld()->AddRocket(m_pOwner, pos);
+; 48   : 	{
+; 49   : 		//fire off a rocket!
+; 50   : 		m_pOwner->GetWorld()->AddRocket(m_pOwner, pos);
 
 	sub	esp, 16					; 00000010H
 	mov	ecx, esp
@@ -15549,8 +15549,8 @@ _pos$ = 8						; size = 16
 	mov	ecx, eax
 	call	?AddRocket@Raven_Game@@QAEXPAVRaven_Bot@@UVector2D@@@Z ; Raven_Game::AddRocket
 
-; 52   : 
-; 53   : 		m_iNumRoundsLeft--;
+; 51   : 
+; 52   : 		m_iNumRoundsLeft--;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+44]
@@ -15558,16 +15558,16 @@ _pos$ = 8						; size = 16
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax+44], edx
 
-; 54   : 
-; 55   : 		UpdateTimeWeaponIsNextAvailable();
+; 53   : 
+; 54   : 		UpdateTimeWeaponIsNextAvailable();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?UpdateTimeWeaponIsNextAvailable@Raven_Weapon@@IAEXXZ ; Raven_Weapon::UpdateTimeWeaponIsNextAvailable
 
-; 56   : 
-; 57   : 		//add a trigger to the game so that the other bots can hear this shot
-; 58   : 		//(provided they are within range)
-; 59   : 		m_pOwner->GetWorld()->GetMap()->AddSoundTrigger(m_pOwner, script->GetDouble("RocketLauncher_SoundRange"));
+; 55   : 
+; 56   : 		//add a trigger to the game so that the other bots can hear this shot
+; 57   : 		//(provided they are within range)
+; 58   : 		m_pOwner->GetWorld()->GetMap()->AddSoundTrigger(m_pOwner, script->GetDouble("RocketLauncher_SoundRange"));
 
 	push	OFFSET ??_C@_0BK@OOJFHLCP@RocketLauncher_SoundRange?$AA@
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
@@ -15587,8 +15587,8 @@ _pos$ = 8						; size = 16
 	call	?AddSoundTrigger@Raven_Map@@QAEXPAVRaven_Bot@@N@Z ; Raven_Map::AddSoundTrigger
 $LN1@ShootAt:
 
-; 60   : 	}
-; 61   : }
+; 59   : 	}
+; 60   : }
 
 	add	esp, 4
 	cmp	ebp, esp
@@ -15614,7 +15614,7 @@ __$EHRec$ = -12						; size = 12
 ?Render@RocketLauncher@@UAEXXZ PROC			; RocketLauncher::Render
 ; _this$ = ecx
 
-; 172  : {
+; 173  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -15637,11 +15637,11 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 173  : 	m_vecWeaponVBTrans = WorldTransform(m_vecWeaponVB,
-; 174  : 		m_pOwner->Pos(),
-; 175  : 		m_pOwner->Facing(),
-; 176  : 		m_pOwner->Facing().Perp(),
-; 177  : 		m_pOwner->Scale());
+; 174  : 	m_vecWeaponVBTrans = WorldTransform(m_vecWeaponVB,
+; 175  : 		m_pOwner->Pos(),
+; 176  : 		m_pOwner->Facing(),
+; 177  : 		m_pOwner->Facing().Perp(),
+; 178  : 		m_pOwner->Scale());
 
 	lea	eax, DWORD PTR $T7[ebp]
 	push	eax
@@ -15691,15 +15691,15 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??1?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@QAE@XZ ; std::vector<Vector2D,std::allocator<Vector2D> >::~vector<Vector2D,std::allocator<Vector2D> >
 
-; 178  : 
-; 179  : 	gdi->RedPen();
+; 179  : 
+; 180  : 	gdi->RedPen();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?RedPen@Cgdi@@QAEXXZ			; Cgdi::RedPen
 
-; 180  : 
-; 181  : 	gdi->ClosedShape(m_vecWeaponVBTrans);
+; 181  : 
+; 182  : 	gdi->ClosedShape(m_vecWeaponVBTrans);
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 112				; 00000070H
@@ -15708,7 +15708,7 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, eax
 	call	?ClosedShape@Cgdi@@QAEXABV?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@@Z ; Cgdi::ClosedShape
 
-; 182  : }
+; 183  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -15748,7 +15748,7 @@ _owner$ = 8						; size = 4
 ??0RocketLauncher@@QAE@PAVRaven_Bot@@@Z PROC		; RocketLauncher::RocketLauncher
 ; _this$ = ecx
 
-; 21   : {
+; 20   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -15808,20 +15808,20 @@ _owner$ = 8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx], OFFSET ??_7RocketLauncher@@6B@
 
-; 22   : 	//setup the vertex buffer
-; 23   : 	const int NumWeaponVerts = 8;
+; 21   : 	//setup the vertex buffer
+; 22   : 	const int NumWeaponVerts = 8;
 
 	mov	DWORD PTR _NumWeaponVerts$[ebp], 8
 
-; 24   : 	const Vector2D weapon[NumWeaponVerts] = { Vector2D(0, -3),
-; 25   : 		Vector2D(6, -3),
-; 26   : 		Vector2D(6, -1),
-; 27   : 		Vector2D(15, -1),
-; 28   : 		Vector2D(15, 1),
-; 29   : 		Vector2D(6, 1),
-; 30   : 		Vector2D(6, 3),
-; 31   : 		Vector2D(0, 3)
-; 32   : 	};
+; 23   : 	const Vector2D weapon[NumWeaponVerts] = { Vector2D(0, -3),
+; 24   : 		Vector2D(6, -3),
+; 25   : 		Vector2D(6, -1),
+; 26   : 		Vector2D(15, -1),
+; 27   : 		Vector2D(15, 1),
+; 28   : 		Vector2D(6, 1),
+; 29   : 		Vector2D(6, 3),
+; 30   : 		Vector2D(0, 3)
+; 31   : 	};
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@c008000000000000
@@ -15888,7 +15888,7 @@ _owner$ = 8						; size = 4
 	lea	ecx, DWORD PTR _weapon$[ebp+112]
 	call	??0Vector2D@@QAE@NN@Z			; Vector2D::Vector2D
 
-; 33   : 	for (int vtx = 0; vtx < NumWeaponVerts; ++vtx)
+; 32   : 	for (int vtx = 0; vtx < NumWeaponVerts; ++vtx)
 
 	mov	DWORD PTR _vtx$2[ebp], 0
 	jmp	SHORT $LN3@RocketLaun
@@ -15900,8 +15900,8 @@ $LN3@RocketLaun:
 	cmp	DWORD PTR _vtx$2[ebp], 8
 	jge	SHORT $LN1@RocketLaun
 
-; 34   : 	{
-; 35   : 		m_vecWeaponVB.push_back(weapon[vtx]);
+; 33   : 	{
+; 34   : 		m_vecWeaponVB.push_back(weapon[vtx]);
 
 	mov	eax, DWORD PTR _vtx$2[ebp]
 	shl	eax, 4
@@ -15911,20 +15911,20 @@ $LN3@RocketLaun:
 	add	ecx, 96					; 00000060H
 	call	?push_back@?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@QAEXABUVector2D@@@Z ; std::vector<Vector2D,std::allocator<Vector2D> >::push_back
 
-; 36   : 	}
+; 35   : 	}
 
 	jmp	SHORT $LN2@RocketLaun
 $LN1@RocketLaun:
 
-; 37   : 
-; 38   : 	//setup the fuzzy module
-; 39   : 	InitializeFuzzyModule();
+; 36   : 
+; 37   : 	//setup the fuzzy module
+; 38   : 	InitializeFuzzyModule();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?InitializeFuzzyModule@RocketLauncher@@EAEXXZ ; RocketLauncher::InitializeFuzzyModule
 
-; 40   : 
-; 41   : }
+; 39   : 
+; 40   : }
 
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
@@ -16147,7 +16147,7 @@ __$EHRec$ = -12						; size = 12
 ?InitializeFuzzyModule@RocketLauncher@@EAEXXZ PROC	; RocketLauncher::InitializeFuzzyModule
 ; _this$ = ecx
 
-; 89   : {
+; 88   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -16171,8 +16171,8 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 90   : 	/* Variables & Ensembles flous */
-; 91   : 	FuzzyVariable& DistToTarget = m_FuzzyModule.CreateFLV("DistToTarget");
+; 89   : 	/* Fuzzy Variables */
+; 90   : 	FuzzyVariable& DistToTarget = m_FuzzyModule.CreateFLV("DistToTarget");
 
 	push	OFFSET $SG157063
 	lea	ecx, DWORD PTR $T44[ebp]
@@ -16188,7 +16188,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T44[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 92   : 	FuzzyVariable& Desirability = m_FuzzyModule.CreateFLV("Desirability");
+; 91   : 	FuzzyVariable& Desirability = m_FuzzyModule.CreateFLV("Desirability");
 
 	push	OFFSET $SG157066
 	lea	ecx, DWORD PTR $T43[ebp]
@@ -16204,7 +16204,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T43[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 93   : 	FuzzyVariable& AmmoStatus = m_FuzzyModule.CreateFLV("AmmoStatus");
+; 92   : 	FuzzyVariable& AmmoStatus = m_FuzzyModule.CreateFLV("AmmoStatus");
 
 	push	OFFSET $SG157069
 	lea	ecx, DWORD PTR $T42[ebp]
@@ -16220,7 +16220,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T42[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 94   : 
+; 93   : 
+; 94   : 	/* Fuzzy Sets */
 ; 95   : 	FzSet& Target_VeryClose = DistToTarget.AddLeftShoulderSet("Target_VeryClose", 0, 25, 50);
 
 	sub	esp, 8
@@ -16614,7 +16615,8 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _Ammo_AlmostEmpty$[ebp], edx
 
 ; 112  : 
-; 113  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_AlmostEmpty), Undesirable);
+; 113  : 	/* Fuzzy Rules */
+; 114  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_AlmostEmpty), Undesirable);
 
 	mov	eax, DWORD PTR _Undesirable$[ebp]
 	push	eax
@@ -16637,7 +16639,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T26[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 114  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_Low), Undesirable);
+; 115  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_Low), Undesirable);
 
 	mov	edx, DWORD PTR _Undesirable$[ebp]
 	push	edx
@@ -16660,7 +16662,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T25[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 115  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_Okay), Undesirable);
+; 116  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_Okay), Undesirable);
 
 	mov	ecx, DWORD PTR _Undesirable$[ebp]
 	push	ecx
@@ -16683,7 +16685,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T24[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 116  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_AlmostFull), Undesirable);
+; 117  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_AlmostFull), Undesirable);
 
 	mov	eax, DWORD PTR _Undesirable$[ebp]
 	push	eax
@@ -16706,7 +16708,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T23[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 117  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_Full), Undesirable);
+; 118  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_Full), Undesirable);
 
 	mov	edx, DWORD PTR _Undesirable$[ebp]
 	push	edx
@@ -16729,8 +16731,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T22[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 118  : 
-; 119  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_AlmostEmpty), Undesirable);
+; 119  : 
+; 120  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_AlmostEmpty), Undesirable);
 
 	mov	ecx, DWORD PTR _Undesirable$[ebp]
 	push	ecx
@@ -16753,7 +16755,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T21[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 120  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Low), Undesirable);
+; 121  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Low), Undesirable);
 
 	mov	eax, DWORD PTR _Undesirable$[ebp]
 	push	eax
@@ -16776,7 +16778,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T20[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 121  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Okay), Undesirable);
+; 122  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Okay), Undesirable);
 
 	mov	edx, DWORD PTR _Undesirable$[ebp]
 	push	edx
@@ -16799,7 +16801,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T19[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 122  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_AlmostFull), LessDesirable);
+; 123  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_AlmostFull), LessDesirable);
 
 	mov	ecx, DWORD PTR _LessDesirable$[ebp]
 	push	ecx
@@ -16822,7 +16824,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T18[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 123  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Full), LessDesirable);
+; 124  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Full), LessDesirable);
 
 	mov	eax, DWORD PTR _LessDesirable$[ebp]
 	push	eax
@@ -16845,8 +16847,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T17[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 124  : 
-; 125  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_AlmostEmpty), LessDesirable);
+; 125  : 
+; 126  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_AlmostEmpty), LessDesirable);
 
 	mov	edx, DWORD PTR _LessDesirable$[ebp]
 	push	edx
@@ -16869,7 +16871,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T16[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 126  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Low), Desirable);
+; 127  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Low), Desirable);
 
 	mov	ecx, DWORD PTR _Desirable$[ebp]
 	push	ecx
@@ -16892,7 +16894,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T15[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 127  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Okay), Desirable);
+; 128  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Okay), Desirable);
 
 	mov	eax, DWORD PTR _Desirable$[ebp]
 	push	eax
@@ -16915,7 +16917,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T14[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 128  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_AlmostFull), MoreDesirable);
+; 129  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_AlmostFull), MoreDesirable);
 
 	mov	edx, DWORD PTR _MoreDesirable$[ebp]
 	push	edx
@@ -16938,7 +16940,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T13[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 129  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Full), MoreDesirable);
+; 130  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Full), MoreDesirable);
 
 	mov	ecx, DWORD PTR _MoreDesirable$[ebp]
 	push	ecx
@@ -16961,8 +16963,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T12[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 130  : 
-; 131  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_AlmostEmpty), Desirable);
+; 131  : 
+; 132  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_AlmostEmpty), Desirable);
 
 	mov	eax, DWORD PTR _Desirable$[ebp]
 	push	eax
@@ -16985,7 +16987,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T11[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 132  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Low), MoreDesirable);
+; 133  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Low), MoreDesirable);
 
 	mov	edx, DWORD PTR _MoreDesirable$[ebp]
 	push	edx
@@ -17008,7 +17010,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T10[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 133  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Okay), MoreDesirable);
+; 134  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Okay), MoreDesirable);
 
 	mov	ecx, DWORD PTR _MoreDesirable$[ebp]
 	push	ecx
@@ -17031,7 +17033,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T9[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 134  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_AlmostFull), ReallyDesirable);
+; 135  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_AlmostFull), ReallyDesirable);
 
 	mov	eax, DWORD PTR _ReallyDesirable$[ebp]
 	push	eax
@@ -17054,7 +17056,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T8[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 135  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Full), ReallyDesirable);
+; 136  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Full), ReallyDesirable);
 
 	mov	edx, DWORD PTR _ReallyDesirable$[ebp]
 	push	edx
@@ -17077,8 +17079,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T7[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 136  : 
-; 137  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_AlmostEmpty), MoreDesirable);
+; 137  : 
+; 138  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_AlmostEmpty), MoreDesirable);
 
 	mov	ecx, DWORD PTR _MoreDesirable$[ebp]
 	push	ecx
@@ -17101,7 +17103,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T6[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 138  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_Low), ReallyDesirable);
+; 139  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_Low), ReallyDesirable);
 
 	mov	eax, DWORD PTR _ReallyDesirable$[ebp]
 	push	eax
@@ -17124,7 +17126,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T5[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 139  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_Okay), ReallyDesirable);
+; 140  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_Okay), ReallyDesirable);
 
 	mov	edx, DWORD PTR _ReallyDesirable$[ebp]
 	push	edx
@@ -17147,7 +17149,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T4[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 140  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_AlmostFull), ReallyDesirable);
+; 141  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_AlmostFull), ReallyDesirable);
 
 	mov	ecx, DWORD PTR _ReallyDesirable$[ebp]
 	push	ecx
@@ -17170,7 +17172,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T3[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 141  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_Full), ReallyDesirable);
+; 142  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Ammo_Full), ReallyDesirable);
 
 	mov	eax, DWORD PTR _ReallyDesirable$[ebp]
 	push	eax
@@ -17193,31 +17195,31 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 142  : 
-; 143  : 	/*FzSet& Target_Close = DistToTarget.AddLeftShoulderSet("Target_Close",0,25,150);
-; 144  : 	FzSet& Target_Medium = DistToTarget.AddTriangularSet("Target_Medium",25,150,300);
-; 145  : 	FzSet& Target_Far = DistToTarget.AddRightShoulderSet("Target_Far",150,300,1000);
-; 146  : 
-; 147  : 	FzSet& VeryDesirable = Desirability.AddRightShoulderSet("VeryDesirable", 50, 75, 100);
-; 148  : 	FzSet& Desirable = Desirability.AddTriangularSet("Desirable", 25, 50, 75);
-; 149  : 	FzSet& Undesirable = Desirability.AddLeftShoulderSet("Undesirable", 0, 25, 50);
-; 150  : 
-; 151  : 	FzSet& Ammo_Loads = AmmoStatus.AddRightShoulderSet("Ammo_Loads", 10, 30, 100);
-; 152  : 	FzSet& Ammo_Okay = AmmoStatus.AddTriangularSet("Ammo_Okay", 0, 10, 30);
-; 153  : 	FzSet& Ammo_Low = AmmoStatus.AddTriangularSet("Ammo_Low", 0, 0, 10);
-; 154  : 
-; 155  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Loads), Undesirable);
-; 156  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Okay), Undesirable);
-; 157  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Low), Undesirable);
-; 158  : 
-; 159  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Loads), VeryDesirable);
-; 160  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Okay), VeryDesirable);
-; 161  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Low), Desirable);
-; 162  : 
-; 163  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Loads), Desirable);
-; 164  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Okay), Undesirable);
-; 165  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Low), Undesirable);*/
-; 166  : }
+; 143  : 
+; 144  : 	/*FzSet& Target_Close = DistToTarget.AddLeftShoulderSet("Target_Close",0,25,150);
+; 145  : 	FzSet& Target_Medium = DistToTarget.AddTriangularSet("Target_Medium",25,150,300);
+; 146  : 	FzSet& Target_Far = DistToTarget.AddRightShoulderSet("Target_Far",150,300,1000);
+; 147  : 
+; 148  : 	FzSet& VeryDesirable = Desirability.AddRightShoulderSet("VeryDesirable", 50, 75, 100);
+; 149  : 	FzSet& Desirable = Desirability.AddTriangularSet("Desirable", 25, 50, 75);
+; 150  : 	FzSet& Undesirable = Desirability.AddLeftShoulderSet("Undesirable", 0, 25, 50);
+; 151  : 
+; 152  : 	FzSet& Ammo_Loads = AmmoStatus.AddRightShoulderSet("Ammo_Loads", 10, 30, 100);
+; 153  : 	FzSet& Ammo_Okay = AmmoStatus.AddTriangularSet("Ammo_Okay", 0, 10, 30);
+; 154  : 	FzSet& Ammo_Low = AmmoStatus.AddTriangularSet("Ammo_Low", 0, 0, 10);
+; 155  : 
+; 156  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Loads), Undesirable);
+; 157  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Okay), Undesirable);
+; 158  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Ammo_Low), Undesirable);
+; 159  : 
+; 160  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Loads), VeryDesirable);
+; 161  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Okay), VeryDesirable);
+; 162  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Ammo_Low), Desirable);
+; 163  : 
+; 164  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Loads), Desirable);
+; 165  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Okay), Undesirable);
+; 166  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Ammo_Low), Undesirable);*/
+; 167  : }
 
 	mov	BYTE PTR __$EHRec$[ebp+8], 16		; 00000010H
 	lea	ecx, DWORD PTR _$S15$[ebp]

@@ -14209,7 +14209,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 267  :   std::list<Raven_Bot*> opponents = GetListOfRecentlySensedOpponents();
+; 267  : 	std::list<Raven_Bot*> opponents = GetListOfRecentlySensedOpponents();
 
 	lea	eax, DWORD PTR _opponents$[ebp]
 	push	eax
@@ -14217,13 +14217,13 @@ __$EHRec$ = -12						; size = 12
 	call	?GetListOfRecentlySensedOpponents@Raven_SensoryMemory@@QBE?AV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@XZ ; Raven_SensoryMemory::GetListOfRecentlySensedOpponents
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 268  :   std::list<Raven_Bot*>::const_iterator it;
+; 268  : 	std::list<Raven_Bot*>::const_iterator it;
 
 	lea	ecx, DWORD PTR _it$[ebp]
 	call	??0?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >
 	mov	BYTE PTR __$EHRec$[ebp+8], 1
 
-; 269  :   for (it = opponents.begin(); it != opponents.end(); ++it)
+; 269  : 	for (it = opponents.begin(); it != opponents.end(); ++it)
 
 	lea	ecx, DWORD PTR $T4[ebp]
 	push	ecx
@@ -14265,14 +14265,14 @@ $LN3@RenderBoxe:
 	test	ecx, ecx
 	je	$LN1@RenderBoxe
 
-; 270  :   {
-; 271  :     gdi->OrangePen();
+; 270  : 	{
+; 271  : 		gdi->OrangePen();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?OrangePen@Cgdi@@QAEXXZ			; Cgdi::OrangePen
 
-; 272  :     Vector2D p = (*it)->Pos();
+; 272  : 		Vector2D p = (*it)->Pos();
 
 	lea	edx, DWORD PTR _p$6[ebp]
 	push	edx
@@ -14281,7 +14281,7 @@ $LN3@RenderBoxe:
 	mov	ecx, DWORD PTR [eax]
 	call	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ	; BaseGameEntity::Pos
 
-; 273  :     double   b = (*it)->BRadius();
+; 273  : 		double   b = (*it)->BRadius();
 
 	lea	ecx, DWORD PTR _it$[ebp]
 	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
@@ -14289,8 +14289,8 @@ $LN3@RenderBoxe:
 	call	?BRadius@BaseGameEntity@@QBENXZ		; BaseGameEntity::BRadius
 	fstp	QWORD PTR _b$5[ebp]
 
-; 274  :       
-; 275  :     gdi->Line(p.x-b, p.y-b, p.x+b, p.y-b);
+; 274  : 
+; 275  : 		gdi->Line(p.x - b, p.y - b, p.x + b, p.y - b);
 
 	movsd	xmm0, QWORD PTR _p$6[ebp+8]
 	subsd	xmm0, QWORD PTR _b$5[ebp]
@@ -14312,7 +14312,7 @@ $LN3@RenderBoxe:
 	mov	ecx, eax
 	call	?Line@Cgdi@@QAEXNNNN@Z			; Cgdi::Line
 
-; 276  :     gdi->Line(p.x+b, p.y-b, p.x+b, p.y+b);
+; 276  : 		gdi->Line(p.x + b, p.y - b, p.x + b, p.y + b);
 
 	movsd	xmm0, QWORD PTR _p$6[ebp+8]
 	addsd	xmm0, QWORD PTR _b$5[ebp]
@@ -14334,7 +14334,7 @@ $LN3@RenderBoxe:
 	mov	ecx, eax
 	call	?Line@Cgdi@@QAEXNNNN@Z			; Cgdi::Line
 
-; 277  :     gdi->Line(p.x+b, p.y+b, p.x-b, p.y+b);
+; 277  : 		gdi->Line(p.x + b, p.y + b, p.x - b, p.y + b);
 
 	movsd	xmm0, QWORD PTR _p$6[ebp+8]
 	addsd	xmm0, QWORD PTR _b$5[ebp]
@@ -14356,7 +14356,7 @@ $LN3@RenderBoxe:
 	mov	ecx, eax
 	call	?Line@Cgdi@@QAEXNNNN@Z			; Cgdi::Line
 
-; 278  :     gdi->Line(p.x-b, p.y+b, p.x-b, p.y-b);
+; 278  : 		gdi->Line(p.x - b, p.y + b, p.x - b, p.y - b);
 
 	movsd	xmm0, QWORD PTR _p$6[ebp+8]
 	subsd	xmm0, QWORD PTR _b$5[ebp]
@@ -14378,7 +14378,7 @@ $LN3@RenderBoxe:
 	mov	ecx, eax
 	call	?Line@Cgdi@@QAEXNNNN@Z			; Cgdi::Line
 
-; 279  :   }
+; 279  : 	}
 
 	jmp	$LN2@RenderBoxe
 $LN1@RenderBoxe:
@@ -14505,15 +14505,15 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	DWORD PTR $T2[ebp], 0
 
-; 145  :   //this will store all the opponents the bot can remember
-; 146  :   std::list<Raven_Bot*> opponents;
+; 145  : 	//this will store all the opponents the bot can remember
+; 146  : 	std::list<Raven_Bot*> opponents;
 
 	lea	ecx, DWORD PTR _opponents$[ebp]
 	call	??0?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAE@XZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::list<Raven_Bot *,std::allocator<Raven_Bot *> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
 ; 147  : 
-; 148  :   double CurrentTime = Clock->GetCurrentTime();
+; 148  : 	double CurrentTime = Clock->GetCurrentTime();
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -14521,7 +14521,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	fstp	QWORD PTR _CurrentTime$[ebp]
 
 ; 149  : 
-; 150  :   MemoryMap::const_iterator curRecord = m_MemoryMap.begin();
+; 150  : 	MemoryMap::const_iterator curRecord = m_MemoryMap.begin();
 
 	lea	eax, DWORD PTR _curRecord$[ebp]
 	push	eax
@@ -14532,7 +14532,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	jmp	SHORT $LN4@GetListOfR
 $LN3@GetListOfR:
 
-; 151  :   for (curRecord; curRecord!=m_MemoryMap.end(); ++curRecord)
+; 151  : 	for (curRecord; curRecord != m_MemoryMap.end(); ++curRecord)
 
 	lea	ecx, DWORD PTR _curRecord$[ebp]
 	call	??E?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QAEAAV01@XZ ; std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<Raven_Bot * const,MemoryRecord> > > >::operator++
@@ -14558,9 +14558,9 @@ $LN4@GetListOfR:
 	test	ecx, ecx
 	je	SHORT $LN2@GetListOfR
 
-; 152  :   {
-; 153  :     //if this bot has been updated in the memory recently, add to list
-; 154  :     if ( (CurrentTime - curRecord->second.fTimeLastSensed) <= m_dMemorySpan)
+; 152  : 	{
+; 153  : 		//if this bot has been updated in the memory recently, add to list
+; 154  : 		if ((CurrentTime - curRecord->second.fTimeLastSensed) <= m_dMemorySpan)
 
 	lea	ecx, DWORD PTR _curRecord$[ebp]
 	call	??C?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QBEPBU?$pair@QAVRaven_Bot@@VMemoryRecord@@@1@XZ ; std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<Raven_Bot * const,MemoryRecord> > > >::operator->
@@ -14571,8 +14571,8 @@ $LN4@GetListOfR:
 	comisd	xmm1, xmm0
 	jb	SHORT $LN1@GetListOfR
 
-; 155  :     {
-; 156  :       opponents.push_back(curRecord->first);
+; 155  : 		{
+; 156  : 			opponents.push_back(curRecord->first);
 
 	lea	ecx, DWORD PTR _curRecord$[ebp]
 	call	??C?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QBEPBU?$pair@QAVRaven_Bot@@VMemoryRecord@@@1@XZ ; std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<Raven_Bot * const,MemoryRecord> > > >::operator->
@@ -14581,14 +14581,14 @@ $LN4@GetListOfR:
 	call	?push_back@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXABQAVRaven_Bot@@@Z ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::push_back
 $LN1@GetListOfR:
 
-; 157  :     }
-; 158  :   }
+; 157  : 		}
+; 158  : 	}
 
 	jmp	SHORT $LN3@GetListOfR
 $LN2@GetListOfR:
 
 ; 159  : 
-; 160  :   return opponents;
+; 160  : 	return opponents;
 
 	lea	eax, DWORD PTR _opponents$[ebp]
 	push	eax
@@ -14719,7 +14719,7 @@ _pOpponent$ = 8						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 235  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
+; 235  : 	MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
 
 	lea	eax, DWORD PTR _pOpponent$[ebp]
 	push	eax
@@ -14730,8 +14730,8 @@ _pOpponent$ = 8						; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 236  :  
-; 237  :   if (it != m_MemoryMap.end())
+; 236  : 
+; 237  : 	if (it != m_MemoryMap.end())
 
 	lea	edx, DWORD PTR $T4[ebp]
 	push	edx
@@ -14754,8 +14754,8 @@ _pOpponent$ = 8						; size = 4
 	test	edx, edx
 	je	SHORT $LN1@GetTimeOpp
 
-; 238  :   {
-; 239  :     return Clock->GetCurrentTime() - it->second.fTimeLastVisible;
+; 238  : 	{
+; 239  : 		return Clock->GetCurrentTime() - it->second.fTimeLastVisible;
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -14775,9 +14775,9 @@ _pOpponent$ = 8						; size = 4
 	jmp	SHORT $LN2@GetTimeOpp
 $LN1@GetTimeOpp:
 
-; 240  :   }
+; 240  : 	}
 ; 241  : 
-; 242  :   return MaxDouble;
+; 242  : 	return MaxDouble;
 
 	movsd	xmm0, QWORD PTR _MaxDouble
 	movsd	QWORD PTR $T2[ebp], xmm0
@@ -14880,7 +14880,7 @@ _pOpponent$ = 8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	DWORD PTR $T2[ebp], 0
 
-; 251  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
+; 251  : 	MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
 
 	lea	eax, DWORD PTR _pOpponent$[ebp]
 	push	eax
@@ -14891,8 +14891,8 @@ _pOpponent$ = 8						; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 252  :  
-; 253  :   if (it != m_MemoryMap.end() && it->second.bWithinFOV)
+; 252  : 
+; 253  : 	if (it != m_MemoryMap.end() && it->second.bWithinFOV)
 
 	lea	edx, DWORD PTR $T5[ebp]
 	push	edx
@@ -14937,8 +14937,8 @@ $LN9@GetTimeSin:
 	test	ecx, ecx
 	je	SHORT $LN1@GetTimeSin
 
-; 254  :   {
-; 255  :     return Clock->GetCurrentTime() - it->second.fTimeLastSensed;
+; 254  : 	{
+; 255  : 		return Clock->GetCurrentTime() - it->second.fTimeLastSensed;
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -14958,9 +14958,9 @@ $LN9@GetTimeSin:
 	jmp	SHORT $LN2@GetTimeSin
 $LN1@GetTimeSin:
 
-; 256  :   }
+; 256  : 	}
 ; 257  : 
-; 258  :   return 0;
+; 258  : 	return 0;
 
 	movsd	xmm0, QWORD PTR __real@0000000000000000
 	movsd	QWORD PTR $T3[ebp], xmm0
@@ -15068,7 +15068,7 @@ _pOpponent$ = 8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	DWORD PTR $T2[ebp], 0
 
-; 218  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
+; 218  : 	MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
 
 	lea	eax, DWORD PTR _pOpponent$[ebp]
 	push	eax
@@ -15079,8 +15079,8 @@ _pOpponent$ = 8						; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 219  :  
-; 220  :   if (it != m_MemoryMap.end() && it->second.bWithinFOV)
+; 219  : 
+; 220  : 	if (it != m_MemoryMap.end() && it->second.bWithinFOV)
 
 	lea	edx, DWORD PTR $T5[ebp]
 	push	edx
@@ -15125,8 +15125,8 @@ $LN9@GetTimeOpp:
 	test	ecx, ecx
 	je	SHORT $LN1@GetTimeOpp
 
-; 221  :   {
-; 222  :     return Clock->GetCurrentTime() - it->second.fTimeBecameVisible;
+; 221  : 	{
+; 222  : 		return Clock->GetCurrentTime() - it->second.fTimeBecameVisible;
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -15146,9 +15146,9 @@ $LN9@GetTimeOpp:
 	jmp	SHORT $LN2@GetTimeOpp
 $LN1@GetTimeOpp:
 
-; 223  :   }
+; 223  : 	}
 ; 224  : 
-; 225  :   return 0;
+; 225  : 	return 0;
 
 	movsd	xmm0, QWORD PTR __real@0000000000000000
 	movsd	QWORD PTR $T3[ebp], xmm0
@@ -15251,7 +15251,7 @@ _pOpponent$ = 12					; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 202  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
+; 202  : 	MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
 
 	lea	eax, DWORD PTR _pOpponent$[ebp]
 	push	eax
@@ -15262,8 +15262,8 @@ _pOpponent$ = 12					; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 203  :  
-; 204  :   if (it != m_MemoryMap.end())
+; 203  : 
+; 204  : 	if (it != m_MemoryMap.end())
 
 	lea	edx, DWORD PTR $T3[ebp]
 	push	edx
@@ -15286,8 +15286,8 @@ _pOpponent$ = 12					; size = 4
 	test	edx, edx
 	je	SHORT $LN1@GetLastRec
 
-; 205  :   {
-; 206  :     return it->second.vLastSensedPosition;
+; 205  : 	{
+; 206  : 		return it->second.vLastSensedPosition;
 
 	lea	ecx, DWORD PTR _it$[ebp]
 	call	??C?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QBEPBU?$pair@QAVRaven_Bot@@VMemoryRecord@@@1@XZ ; std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<Raven_Bot * const,MemoryRecord> > > >::operator->
@@ -15308,9 +15308,9 @@ _pOpponent$ = 12					; size = 4
 	jmp	SHORT $LN3@GetLastRec
 $LN1@GetLastRec:
 
-; 207  :   }
+; 207  : 	}
 ; 208  : 
-; 209  :   throw std::runtime_error("< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent>: Attempting to get position of unrecorded bot");
+; 209  : 	throw std::runtime_error("< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent>: Attempting to get position of unrecorded bot");
 
 	push	OFFSET $SG146807
 	lea	ecx, DWORD PTR $T2[ebp]
@@ -15412,7 +15412,7 @@ _pOpponent$ = 8						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 186  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
+; 186  : 	MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
 
 	lea	eax, DWORD PTR _pOpponent$[ebp]
 	push	eax
@@ -15423,8 +15423,8 @@ _pOpponent$ = 8						; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 187  :  
-; 188  :   if (it != m_MemoryMap.end())
+; 187  : 
+; 188  : 	if (it != m_MemoryMap.end())
 
 	lea	edx, DWORD PTR $T4[ebp]
 	push	edx
@@ -15447,8 +15447,8 @@ _pOpponent$ = 8						; size = 4
 	test	edx, edx
 	je	SHORT $LN1@isOpponent
 
-; 189  :   {
-; 190  :     return it->second.bWithinFOV;
+; 189  : 	{
+; 190  : 		return it->second.bWithinFOV;
 
 	lea	ecx, DWORD PTR _it$[ebp]
 	call	??C?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QBEPBU?$pair@QAVRaven_Bot@@VMemoryRecord@@@1@XZ ; std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<Raven_Bot * const,MemoryRecord> > > >::operator->
@@ -15461,9 +15461,9 @@ _pOpponent$ = 8						; size = 4
 	jmp	SHORT $LN2@isOpponent
 $LN1@isOpponent:
 
-; 191  :   }
+; 191  : 	}
 ; 192  : 
-; 193  :   return false;
+; 193  : 	return false;
 
 	mov	BYTE PTR $T2[ebp], 0
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
@@ -15559,7 +15559,7 @@ _pOpponent$ = 8						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 170  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
+; 170  : 	MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
 
 	lea	eax, DWORD PTR _pOpponent$[ebp]
 	push	eax
@@ -15570,8 +15570,8 @@ _pOpponent$ = 8						; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 171  :  
-; 172  :   if (it != m_MemoryMap.end())
+; 171  : 
+; 172  : 	if (it != m_MemoryMap.end())
 
 	lea	edx, DWORD PTR $T4[ebp]
 	push	edx
@@ -15594,8 +15594,8 @@ _pOpponent$ = 8						; size = 4
 	test	edx, edx
 	je	SHORT $LN1@isOpponent
 
-; 173  :   {
-; 174  :     return it->second.bShootable;
+; 173  : 	{
+; 174  : 		return it->second.bShootable;
 
 	lea	ecx, DWORD PTR _it$[ebp]
 	call	??C?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QBEPBU?$pair@QAVRaven_Bot@@VMemoryRecord@@@1@XZ ; std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<Raven_Bot * const,MemoryRecord> > > >::operator->
@@ -15608,9 +15608,9 @@ _pOpponent$ = 8						; size = 4
 	jmp	SHORT $LN2@isOpponent
 $LN1@isOpponent:
 
-; 175  :   }
+; 175  : 	}
 ; 176  : 
-; 177  :   return false;
+; 177  : 	return false;
 
 	mov	BYTE PTR $T2[ebp], 0
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
@@ -15714,9 +15714,9 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 84   :   //for each bot in the world test to see if it is visible to the owner of
-; 85   :   //this class
-; 86   :   const std::list<Raven_Bot*>& bots = m_pOwner->GetWorld()->GetAllBots();
+; 84   : 	//for each bot in the world test to see if it is visible to the owner of
+; 85   : 	//this class
+; 86   : 	const std::list<Raven_Bot*>& bots = m_pOwner->GetWorld()->GetAllBots();
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax]
@@ -15725,13 +15725,13 @@ __$EHRec$ = -12						; size = 12
 	call	?GetAllBots@Raven_Game@@QBEABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@XZ ; Raven_Game::GetAllBots
 	mov	DWORD PTR _bots$[ebp], eax
 
-; 87   :   std::list<Raven_Bot*>::const_iterator curBot;
+; 87   : 	std::list<Raven_Bot*>::const_iterator curBot;
 
 	lea	ecx, DWORD PTR _curBot$[ebp]
 	call	??0?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 88   :   for (curBot = bots.begin(); curBot!=bots.end(); ++curBot)
+; 88   : 	for (curBot = bots.begin(); curBot != bots.end(); ++curBot)
 
 	lea	ecx, DWORD PTR $T10[ebp]
 	push	ecx
@@ -15773,9 +15773,9 @@ $LN9@UpdateVisi:
 	test	ecx, ecx
 	je	$LN7@UpdateVisi
 
-; 89   :   {
-; 90   :     //make sure the bot being examined is not this bot
-; 91   :     if (m_pOwner != *curBot)
+; 89   : 	{
+; 90   : 		//make sure the bot being examined is not this bot
+; 91   : 		if (m_pOwner != *curBot)
 
 	lea	ecx, DWORD PTR _curBot$[ebp]
 	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
@@ -15784,9 +15784,9 @@ $LN9@UpdateVisi:
 	cmp	ecx, DWORD PTR [eax]
 	je	$LN1@UpdateVisi
 
-; 92   :     {
-; 93   :       //make sure it is part of the memory map
-; 94   :       MakeNewRecordIfNotAlreadyPresent(*curBot);
+; 92   : 		{
+; 93   : 			//make sure it is part of the memory map
+; 94   : 			MakeNewRecordIfNotAlreadyPresent(*curBot);
 
 	lea	ecx, DWORD PTR _curBot$[ebp]
 	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
@@ -15796,8 +15796,8 @@ $LN9@UpdateVisi:
 	call	?MakeNewRecordIfNotAlreadyPresent@Raven_SensoryMemory@@AAEXPAVRaven_Bot@@@Z ; Raven_SensoryMemory::MakeNewRecordIfNotAlreadyPresent
 
 ; 95   : 
-; 96   :       //get a reference to this bot's data
-; 97   :       MemoryRecord& info = m_MemoryMap[*curBot];
+; 96   : 			//get a reference to this bot's data
+; 97   : 			MemoryRecord& info = m_MemoryMap[*curBot];
 
 	lea	ecx, DWORD PTR _curBot$[ebp]
 	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
@@ -15808,8 +15808,8 @@ $LN9@UpdateVisi:
 	mov	DWORD PTR _info$11[ebp], eax
 
 ; 98   : 
-; 99   :       //test if there is LOS between bots 
-; 100  :       if (m_pOwner->GetWorld()->isLOSOkay(m_pOwner->Pos(), (*curBot)->Pos()))
+; 99   : 			//test if there is LOS between bots 
+; 100  : 			if (m_pOwner->GetWorld()->isLOSOkay(m_pOwner->Pos(), (*curBot)->Pos()))
 
 	lea	eax, DWORD PTR $T7[ebp]
 	push	eax
@@ -15851,18 +15851,18 @@ $LN9@UpdateVisi:
 	test	edx, edx
 	je	$LN5@UpdateVisi
 
-; 101  :       {
-; 102  :         info.bShootable = true;
+; 101  : 			{
+; 102  : 				info.bShootable = true;
 
 	mov	eax, DWORD PTR _info$11[ebp]
 	mov	BYTE PTR [eax+41], 1
 
 ; 103  : 
-; 104  :               //test if the bot is within FOV
-; 105  :         if (isSecondInFOVOfFirst(m_pOwner->Pos(),
-; 106  :                                  m_pOwner->Facing(),
-; 107  :                                  (*curBot)->Pos(),
-; 108  :                                   m_pOwner->FieldOfView()))
+; 104  : 				//test if the bot is within FOV
+; 105  : 				if (isSecondInFOVOfFirst(m_pOwner->Pos(),
+; 106  : 					m_pOwner->Facing(),
+; 107  : 					(*curBot)->Pos(),
+; 108  : 					m_pOwner->FieldOfView()))
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx]
@@ -15921,8 +15921,8 @@ $LN9@UpdateVisi:
 	test	ecx, ecx
 	je	SHORT $LN4@UpdateVisi
 
-; 109  :         {
-; 110  :           info.fTimeLastSensed     = Clock->GetCurrentTime();
+; 109  : 				{
+; 110  : 					info.fTimeLastSensed = Clock->GetCurrentTime();
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -15930,7 +15930,7 @@ $LN9@UpdateVisi:
 	mov	edx, DWORD PTR _info$11[ebp]
 	fstp	QWORD PTR [edx]
 
-; 111  :           info.vLastSensedPosition = (*curBot)->Pos();
+; 111  : 					info.vLastSensedPosition = (*curBot)->Pos();
 
 	lea	eax, DWORD PTR $T2[ebp]
 	push	eax
@@ -15949,7 +15949,7 @@ $LN9@UpdateVisi:
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
 
-; 112  :           info.fTimeLastVisible    = Clock->GetCurrentTime();
+; 112  : 					info.fTimeLastVisible = Clock->GetCurrentTime();
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -15958,20 +15958,20 @@ $LN9@UpdateVisi:
 	fstp	QWORD PTR [ecx+16]
 
 ; 113  : 
-; 114  :           if (info.bWithinFOV == false)
+; 114  : 					if (info.bWithinFOV == false)
 
 	mov	edx, DWORD PTR _info$11[ebp]
 	movzx	eax, BYTE PTR [edx+40]
 	test	eax, eax
 	jne	SHORT $LN3@UpdateVisi
 
-; 115  :           {
-; 116  :             info.bWithinFOV           = true;
+; 115  : 					{
+; 116  : 						info.bWithinFOV = true;
 
 	mov	ecx, DWORD PTR _info$11[ebp]
 	mov	BYTE PTR [ecx+40], 1
 
-; 117  :             info.fTimeBecameVisible    = info.fTimeLastSensed;
+; 117  : 						info.fTimeBecameVisible = info.fTimeLastSensed;
 
 	mov	edx, DWORD PTR _info$11[ebp]
 	mov	eax, DWORD PTR _info$11[ebp]
@@ -15979,45 +15979,45 @@ $LN9@UpdateVisi:
 	movsd	QWORD PTR [edx+8], xmm0
 $LN3@UpdateVisi:
 
-; 118  :           
-; 119  :           }
-; 120  :         }
+; 118  : 
+; 119  : 					}
+; 120  : 				}
 ; 121  : 
-; 122  :         else
+; 122  : 				else
 
 	jmp	SHORT $LN2@UpdateVisi
 $LN4@UpdateVisi:
 
-; 123  :         {
-; 124  :           info.bWithinFOV = false;         
+; 123  : 				{
+; 124  : 					info.bWithinFOV = false;
 
 	mov	ecx, DWORD PTR _info$11[ebp]
 	mov	BYTE PTR [ecx+40], 0
 $LN2@UpdateVisi:
 
-; 125  :         }
-; 126  :       }
+; 125  : 				}
+; 126  : 			}
 ; 127  : 
-; 128  :       else
+; 128  : 			else
 
 	jmp	SHORT $LN1@UpdateVisi
 $LN5@UpdateVisi:
 
-; 129  :       {
-; 130  :         info.bShootable = false;
+; 129  : 			{
+; 130  : 				info.bShootable = false;
 
 	mov	edx, DWORD PTR _info$11[ebp]
 	mov	BYTE PTR [edx+41], 0
 
-; 131  :         info.bWithinFOV = false;
+; 131  : 				info.bWithinFOV = false;
 
 	mov	eax, DWORD PTR _info$11[ebp]
 	mov	BYTE PTR [eax+40], 0
 $LN1@UpdateVisi:
 
-; 132  :       }
-; 133  :     }
-; 134  :   }//next bot
+; 132  : 			}
+; 133  : 		}
+; 134  : 	}//next bot
 
 	jmp	$LN8@UpdateVisi
 $LN7@UpdateVisi:
@@ -16122,7 +16122,7 @@ _pBot$ = 8						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 33   :   MemoryMap::iterator record = m_MemoryMap.find(pBot);
+; 33   : 	MemoryMap::iterator record = m_MemoryMap.find(pBot);
 
 	lea	eax, DWORD PTR _pBot$[ebp]
 	push	eax
@@ -16133,8 +16133,8 @@ _pBot$ = 8						; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QAE?AV?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 34   :   
-; 35   :   if (record != m_MemoryMap.end())
+; 34   : 
+; 35   : 	if (record != m_MemoryMap.end())
 
 	lea	edx, DWORD PTR $T4[ebp]
 	push	edx
@@ -16157,8 +16157,8 @@ _pBot$ = 8						; size = 4
 	test	edx, edx
 	je	SHORT $LN1@RemoveBotF
 
-; 36   :   {
-; 37   :     m_MemoryMap.erase(record);
+; 36   : 	{
+; 37   : 		m_MemoryMap.erase(record);
 
 	sub	esp, 12					; 0000000cH
 	mov	ecx, esp
@@ -16177,7 +16177,7 @@ _pBot$ = 8						; size = 4
 	call	??1?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QAE@XZ
 $LN1@RemoveBotF:
 
-; 38   :   }
+; 38   : 	}
 ; 39   : }
 
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
@@ -16260,18 +16260,18 @@ _pNoiseMaker$ = 8					; size = 4
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 49   :   //make sure the bot being examined is not this bot
-; 50   :   if (m_pOwner != pNoiseMaker)
+; 49   : 	//make sure the bot being examined is not this bot
+; 50   : 	if (m_pOwner != pNoiseMaker)
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax]
 	cmp	ecx, DWORD PTR _pNoiseMaker$[ebp]
 	je	$LN3@UpdateWith
 
-; 51   :   {
-; 52   :     //if the bot is already part of the memory then update its data, else
-; 53   :     //create a new memory record and add it to the memory
-; 54   :     MakeNewRecordIfNotAlreadyPresent(pNoiseMaker);
+; 51   : 	{
+; 52   : 		//if the bot is already part of the memory then update its data, else
+; 53   : 		//create a new memory record and add it to the memory
+; 54   : 		MakeNewRecordIfNotAlreadyPresent(pNoiseMaker);
 
 	mov	edx, DWORD PTR _pNoiseMaker$[ebp]
 	push	edx
@@ -16279,7 +16279,7 @@ _pNoiseMaker$ = 8					; size = 4
 	call	?MakeNewRecordIfNotAlreadyPresent@Raven_SensoryMemory@@AAEXPAVRaven_Bot@@@Z ; Raven_SensoryMemory::MakeNewRecordIfNotAlreadyPresent
 
 ; 55   : 
-; 56   :     MemoryRecord& info = m_MemoryMap[pNoiseMaker];
+; 56   : 		MemoryRecord& info = m_MemoryMap[pNoiseMaker];
 
 	lea	eax, DWORD PTR _pNoiseMaker$[ebp]
 	push	eax
@@ -16289,8 +16289,8 @@ _pNoiseMaker$ = 8					; size = 4
 	mov	DWORD PTR _info$4[ebp], eax
 
 ; 57   : 
-; 58   :     //test if there is LOS between bots 
-; 59   :     if (m_pOwner->GetWorld()->isLOSOkay(m_pOwner->Pos(), pNoiseMaker->Pos()))
+; 58   : 		//test if there is LOS between bots 
+; 59   : 		if (m_pOwner->GetWorld()->isLOSOkay(m_pOwner->Pos(), pNoiseMaker->Pos()))
 
 	lea	ecx, DWORD PTR $T3[ebp]
 	push	ecx
@@ -16330,15 +16330,15 @@ _pNoiseMaker$ = 8					; size = 4
 	test	edx, edx
 	je	SHORT $LN2@UpdateWith
 
-; 60   :     {
-; 61   :       info.bShootable = true;
+; 60   : 		{
+; 61   : 			info.bShootable = true;
 
 	mov	eax, DWORD PTR _info$4[ebp]
 	mov	BYTE PTR [eax+41], 1
 
-; 62   :       
-; 63   :      //record the position of the bot
-; 64   :       info.vLastSensedPosition = pNoiseMaker->Pos();
+; 62   : 
+; 63   : 			//record the position of the bot
+; 64   : 			info.vLastSensedPosition = pNoiseMaker->Pos();
 
 	lea	ecx, DWORD PTR $T1[ebp]
 	push	ecx
@@ -16355,23 +16355,23 @@ _pNoiseMaker$ = 8					; size = 4
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [edx+12], eax
 
-; 65   :     }
-; 66   :     else
+; 65   : 		}
+; 66   : 		else
 
 	jmp	SHORT $LN1@UpdateWith
 $LN2@UpdateWith:
 
-; 67   :     {
-; 68   :       info.bShootable = false;
+; 67   : 		{
+; 68   : 			info.bShootable = false;
 
 	mov	ecx, DWORD PTR _info$4[ebp]
 	mov	BYTE PTR [ecx+41], 0
 $LN1@UpdateWith:
 
-; 69   :     }
-; 70   :     
-; 71   :     //record the time it was sensed
-; 72   :     info.fTimeLastSensed = (double)Clock->GetCurrentTime();
+; 69   : 		}
+; 70   : 
+; 71   : 		//record the time it was sensed
+; 72   : 		info.fTimeLastSensed = (double)Clock->GetCurrentTime();
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -16380,7 +16380,7 @@ $LN1@UpdateWith:
 	fstp	QWORD PTR [edx]
 $LN3@UpdateWith:
 
-; 73   :   }
+; 73   : 	}
 ; 74   : }
 
 	pop	edi
@@ -16467,9 +16467,9 @@ _pOpponent$ = 8						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 19   :   //else check to see if this Opponent already exists in the memory. If it doesn't,
-; 20   :   //create a new record
-; 21   :   if (m_MemoryMap.find(pOpponent) == m_MemoryMap.end())
+; 19   : 	//else check to see if this Opponent already exists in the memory. If it doesn't,
+; 20   : 	//create a new record
+; 21   : 	if (m_MemoryMap.find(pOpponent) == m_MemoryMap.end())
 
 	lea	eax, DWORD PTR $T3[ebp]
 	push	eax
@@ -16506,8 +16506,8 @@ _pOpponent$ = 8						; size = 4
 	test	eax, eax
 	je	SHORT $LN2@MakeNewRec
 
-; 22   :   {
-; 23   :     m_MemoryMap[pOpponent] = MemoryRecord();
+; 22   : 	{
+; 23   : 		m_MemoryMap[pOpponent] = MemoryRecord();
 
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0MemoryRecord@@QAE@XZ			; MemoryRecord::MemoryRecord
@@ -16522,7 +16522,7 @@ _pOpponent$ = 8						; size = 4
 	rep movsd
 $LN2@MakeNewRec:
 
-; 24   :   }
+; 24   : 	}
 ; 25   : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
@@ -21478,7 +21478,7 @@ _this$ = -4						; size = 4
 ??0MemoryRecord@@QAE@XZ PROC				; MemoryRecord::MemoryRecord, COMDAT
 ; _this$ = ecx
 
-; 56   :   {}
+; 56   : 	{}
 
 	push	ebp
 	mov	ebp, esp

@@ -516,9 +516,6 @@
     <ClInclude Include="..\Common\Messaging\Telegram.h">
       <Filter>AI\Messaging</Filter>
     </ClInclude>
-    <ClInclude Include="Raven_SensoryMemory.h">
-      <Filter>AI\Sensory Memory</Filter>
-    </ClInclude>
     <ClInclude Include="..\Common\Triggers\Trigger.h">
       <Filter>AI\Triggers</Filter>
     </ClInclude>
@@ -605,6 +602,9 @@
     </ClInclude>
     <ClInclude Include="..\Common\misc\WindowUtils.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Raven_SensoryMemory.h">
+      <Filter>AI\Sensory Memory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

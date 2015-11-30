@@ -14,6 +14,8 @@
 #include <map>
 #include "2d/vector2d.h"
 
+#include "Fuzzy/FuzzyModule.h"
+
 class Raven_Bot;
 class Raven_Weapon;
 
@@ -21,93 +23,99 @@ class Raven_Weapon;
 
 class Raven_WeaponSystem
 {
-private:
-  
-  //a map of weapon instances indexed into by type
-  typedef std::map<int, Raven_Weapon*>  WeaponMap;
+protected:
+	FuzzyModule   m_FuzzyModule;
 
 private:
+	//set up some fuzzy variables and rules
+	void     InitializeFuzzyModule();
 
-  Raven_Bot*       m_pOwner;
+	//a map of weapon instances indexed into by type
+	typedef std::map<int, Raven_Weapon*>  WeaponMap;
 
-  //pointers to the weapons the bot is carrying (a bot may only carry one
-  //instance of each weapon)
-  WeaponMap        m_WeaponMap;
+	Raven_Bot*       m_pOwner;
 
-  //a pointer to the weapon the bot is currently holding
-  Raven_Weapon*    m_pCurrentWeapon;
+	//pointers to the weapons the bot is carrying (a bot may only carry one
+	//instance of each weapon)
+	WeaponMap        m_WeaponMap;
 
-  //this is the minimum amount of time a bot needs to see an opponent before
-  //it can react to it. This variable is used to prevent a bot shooting at
-  //an opponent the instant it becomes visible.
-  double            m_dReactionTime;
+	//a pointer to the weapon the bot is currently holding
+	Raven_Weapon*    m_pCurrentWeapon;
 
-  //each time the current weapon is fired a certain amount of random noise is
-  //added to the the angle of the shot. This prevents the bots from hitting
-  //their opponents 100% of the time. The lower this value the more accurate
-  //a bot's aim will be. Recommended values are between 0 and 0.2 (the value
-  //represents the max deviation in radians that can be added to each shot).
-  double            m_dAimAccuracy;
+	//this is the minimum amount of time a bot needs to see an opponent before
+	//it can react to it. This variable is used to prevent a bot shooting at
+	//an opponent the instant it becomes visible.
+	double            m_dReactionTime;
 
-  //the amount of time a bot will continue aiming at the position of the target
-  //even if the target disappears from view.
-  double            m_dAimPersistance;
+	//each time the current weapon is fired a certain amount of random noise is
+	//added to the the angle of the shot. This prevents the bots from hitting
+	//their opponents 100% of the time. The lower this value the more accurate
+	//a bot's aim will be. Recommended values are between 0 and 0.2 (the value
+	//represents the max deviation in radians that can be added to each shot).
+	double            m_dAimAccuracy;
 
-  //predicts where the target will be by the time it takes the current weapon's
-  //projectile type to reach it. Used by TakeAimAndShoot
-  Vector2D    PredictFuturePositionOfTarget()const;
+	//the amount of time a bot will continue aiming at the position of the target
+	//even if the target disappears from view.
+	double            m_dAimPersistance;
 
-  //adds a random deviation to the firing angle not greater than m_dAimAccuracy 
-  //rads
-  void        AddNoiseToAim(Vector2D& AimingPos)const;
+	//predicts where the target will be by the time it takes the current weapon's
+	//projectile type to reach it. Used by TakeAimAndShoot
+	Vector2D    PredictFuturePositionOfTarget()const;
+
+	//adds a random deviation to the firing angle not greater than m_dAimAccuracy 
+	//rads
+	void        AddNoiseToAim(Vector2D& AimingPos)const;
+
+	//adds a deviation to the firing angle using fuzzy logic
+	void        AddFuzzyDeviationToAim(Vector2D& AimingPos);
 
 public:
 
-  Raven_WeaponSystem(Raven_Bot* owner,
-                     double      ReactionTime,
-                     double      AimAccuracy,
-                     double      AimPersistance);
-  
-  ~Raven_WeaponSystem();
+	Raven_WeaponSystem(Raven_Bot* owner,
+		double      ReactionTime,
+		double      AimAccuracy,
+		double      AimPersistance);
 
-  //sets up the weapon map with just one weapon: the blaster
-  void          Initialize();
+	~Raven_WeaponSystem();
 
-  //this method aims the bot's current weapon at the target (if there is a
-  //target) and, if aimed correctly, fires a round. (Called each update-step
-  //from Raven_Bot::Update)
-  void          TakeAimAndShoot()const;
+	//sets up the weapon map with just one weapon: the blaster
+	void          Initialize();
 
-  //this method determines the most appropriate weapon to use given the current
-  //game state. (Called every n update-steps from Raven_Bot::Update)
-  void          SelectWeapon();
-  
-  //this will add a weapon of the specified type to the bot's inventory. 
-  //If the bot already has a weapon of this type only the ammo is added. 
-  //(called by the weapon giver-triggers to give a bot a weapon)
-  void          AddWeapon(unsigned int weapon_type);
+	//this method aims the bot's current weapon at the target (if there is a
+	//target) and, if aimed correctly, fires a round. (Called each update-step
+	//from Raven_Bot::Update)
+	void          TakeAimAndShoot();
 
-  //changes the current weapon to one of the specified type (provided that type
-  //is in the bot's possession)
-  void          ChangeWeapon(unsigned int type);
+	//this method determines the most appropriate weapon to use given the current
+	//game state. (Called every n update-steps from Raven_Bot::Update)
+	void          SelectWeapon();
 
-  //shoots the current weapon at the given position
-  void          ShootAt(Vector2D pos)const;
+	//this will add a weapon of the specified type to the bot's inventory. 
+	//If the bot already has a weapon of this type only the ammo is added. 
+	//(called by the weapon giver-triggers to give a bot a weapon)
+	void          AddWeapon(unsigned int weapon_type);
 
-  //returns a pointer to the current weapon
-  Raven_Weapon* GetCurrentWeapon()const{return m_pCurrentWeapon;} 
+	//changes the current weapon to one of the specified type (provided that type
+	//is in the bot's possession)
+	void          ChangeWeapon(unsigned int type);
 
-  //returns a pointer to the specified weapon type (if in inventory, null if 
-  //not)
-  Raven_Weapon* GetWeaponFromInventory(int weapon_type);
+	//shoots the current weapon at the given position
+	void          ShootAt(Vector2D pos)const;
 
-  //returns the amount of ammo remaining for the specified weapon
-  int           GetAmmoRemainingForWeapon(unsigned int weapon_type);
+	//returns a pointer to the current weapon
+	Raven_Weapon* GetCurrentWeapon()const{ return m_pCurrentWeapon; }
 
-  double         ReactionTime()const{return m_dReactionTime;}
+	//returns a pointer to the specified weapon type (if in inventory, null if 
+	//not)
+	Raven_Weapon* GetWeaponFromInventory(int weapon_type);
 
-  void          RenderCurrentWeapon()const;
-  void          RenderDesirabilities()const;
+	//returns the amount of ammo remaining for the specified weapon
+	int           GetAmmoRemainingForWeapon(unsigned int weapon_type);
+
+	double         ReactionTime()const{ return m_dReactionTime; }
+
+	void          RenderCurrentWeapon()const;
+	void          RenderDesirabilities()const;
 };
 
 #endif

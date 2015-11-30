@@ -12,52 +12,52 @@ INCLUDELIB OLDNAMES
 CONST	SEGMENT
 _pi	DQ	0400921f9f01b866er		; 3.14159
 _SmallestDelay DQ 03fd0000000000000r		; 0.25
-$SG165255 DB	'Bot_MaxForce', 00H
-$SG165341 DB	00H
-$SG165460 DB	00H
-$SG165469 DB	00H
-$SG165256 DB	'Bot_MaxHeadTurnRate', 00H
-$SG165257 DB	'Bot_Scale', 00H
+$SG170460 DB	'Bot_MaxForce', 00H
+$SG170546 DB	00H
+$SG170665 DB	00H
+$SG170674 DB	00H
+$SG170461 DB	'Bot_MaxHeadTurnRate', 00H
+$SG170462 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG165258 DB	'Bot_Scale', 00H
+$SG170463 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG165259 DB	'Bot_Mass', 00H
+$SG170464 DB	'Bot_Mass', 00H
 	ORG $+3
-$SG165260 DB	'Bot_MaxSpeed', 00H
+$SG170465 DB	'Bot_MaxSpeed', 00H
 	ORG $+3
-$SG165261 DB	'Bot_Scale', 00H
+$SG170466 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG165262 DB	'Bot_MaxHealth', 00H
+$SG170467 DB	'Bot_MaxHealth', 00H
 	ORG $+2
-$SG165263 DB	'Bot_MaxHealth', 00H
+$SG170468 DB	'Bot_MaxHealth', 00H
 	ORG $+2
-$SG165264 DB	'Bot_FOV', 00H
-$SG165265 DB	'HitFlashTime', 00H
+$SG170469 DB	'Bot_FOV', 00H
+$SG170470 DB	'HitFlashTime', 00H
 	ORG $+3
-$SG165278 DB	'Bot_WeaponSelectionFrequency', 00H
+$SG170483 DB	'Bot_WeaponSelectionFrequency', 00H
 	ORG $+3
-$SG165283 DB	'Bot_GoalAppraisalUpdateFreq', 00H
-$SG165288 DB	'Bot_TargetingUpdateFreq', 00H
-$SG165293 DB	'Bot_TriggerUpdateFreq', 00H
+$SG170488 DB	'Bot_GoalAppraisalUpdateFreq', 00H
+$SG170493 DB	'Bot_TargetingUpdateFreq', 00H
+$SG170498 DB	'Bot_TriggerUpdateFreq', 00H
 	ORG $+2
-$SG165298 DB	'Bot_VisionUpdateFreq', 00H
+$SG170503 DB	'Bot_VisionUpdateFreq', 00H
 	ORG $+3
-$SG165311 DB	'Bot_AimPersistance', 00H
+$SG170516 DB	'Bot_AimPersistance', 00H
 	ORG $+1
-$SG165312 DB	'Bot_AimAccuracy', 00H
-$SG165313 DB	'Bot_ReactionTime', 00H
+$SG170517 DB	'Bot_AimAccuracy', 00H
+$SG170518 DB	'Bot_ReactionTime', 00H
 	ORG $+3
-$SG165318 DB	'Bot_MemorySpan', 00H
+$SG170523 DB	'Bot_MemorySpan', 00H
 	ORG $+1
-$SG165339 DB	'deleting raven bot (id = ', 00H
+$SG170544 DB	'deleting raven bot (id = ', 00H
 	ORG $+2
-$SG165340 DB	')', 00H
+$SG170545 DB	')', 00H
 	ORG $+2
-$SG165450 DB	'HitFlashTime', 00H
+$SG170655 DB	'HitFlashTime', 00H
 	ORG $+3
-$SG165459 DB	'Player Possesses bot ', 00H
+$SG170664 DB	'Player Possesses bot ', 00H
 	ORG $+2
-$SG165468 DB	'Player is exorcised from bot ', 00H
+$SG170673 DB	'Player is exorcised from bot ', 00H
 	ORG $+2
 _colors	DD	0ffH
 	DD	0ff0000H
@@ -74,11 +74,11 @@ _colors	DD	0ffH
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG165599 DB	'H:', 00H
+$SG170804 DB	'H:', 00H
 	ORG $+1
-$SG165606 DB	'Scr:', 00H
+$SG170811 DB	'Scr:', 00H
 	ORG $+3
-$SG165617 DB	'Bot_Scale', 00H
+$SG170822 DB	'Bot_Scale', 00H
 	ORG $+6
 _SEND_MSG_IMMEDIATELY DQ 00000000000000000r	; 0
 _Pi	DQ	0400921f9f01b866er		; 3.14159
@@ -992,20 +992,23 @@ PUBLIC	??_C@_15GANGMFKL@?$AA?$CF?$AAs?$AA?$AA@		; `string'
 PUBLIC	??_C@_1BO@MEPPHOO@?$AA?$CC?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$CC?$AA?$AA@ ; `string'
 PUBLIC	??_C@_1KC@ILGGEGM@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAs?$AAt?$AAr?$AAu?$AAc?$AAt?$AA?5?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA2?$AAD?$AA?0?$AAc?$AAl?$AAa?$AAs@ ; `string'
 PUBLIC	?id@?$codecvt@DDH@std@@2V0locale@2@A		; std::codecvt<char,char,int>::id
+PUBLIC	??_C@_1IK@GEHGEPIJ@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@ ; `string'
 PUBLIC	??_C@_02MDKMJEGG@eE?$AA@			; `string'
 PUBLIC	??_C@_02OOPEBDOJ@pP?$AA@			; `string'
 PUBLIC	??_C@_01LFCBOECM@?4?$AA@			; `string'
+PUBLIC	??_C@_1DO@CFEEPGGJ@?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ ; `string'
+PUBLIC	??_C@_0CI@FNPHFCCM@Standard?5C?$CL?$CL?5Libraries?5Invalid?5A@ ; `string'
+PUBLIC	??_C@_1FO@GJIHNDLM@?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5@ ; `string'
+PUBLIC	??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA?$CC?$AA?$AA@ ; `string'
+PUBLIC	??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@ ; `string'
+PUBLIC	??_C@_1EE@EJDKCLKB@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb?$AAl@ ; `string'
 PUBLIC	??_C@_1DM@GMPLOCPK@?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAs?$AAu?$AAb?$AAs?$AAc?$AAr?$AAi?$AAp?$AAt?$AA?5?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$AA@ ; `string'
 PUBLIC	??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@	; `string'
 PUBLIC	??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@ ; `string'
 PUBLIC	??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@ ; `string'
-PUBLIC	??_C@_1IK@GEHGEPIJ@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@ ; `string'
+PUBLIC	??_C@_1DM@HINDPMBP@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ ; `string'
 PUBLIC	??_C@_1EK@PPDBPCAN@?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAo?$AAu?$AAt?$AAs?$AAi?$AAd?$AAe?$AA?5?$AAr@ ; `string'
-PUBLIC	??_C@_1DO@CFEEPGGJ@?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ ; `string'
-PUBLIC	??_C@_0CI@FNPHFCCM@Standard?5C?$CL?$CL?5Libraries?5Invalid?5A@ ; `string'
-PUBLIC	??_C@_1FO@GJIHNDLM@?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5@ ; `string'
 PUBLIC	??_C@_1BDM@OEEPLJFA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs?$AAs?$AA?5@ ; `string'
-PUBLIC	??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA?$CC?$AA?$AA@ ; `string'
 PUBLIC	??_C@_1EG@EHJFMBHJ@?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb@ ; `string'
 PUBLIC	??_C@_1BDM@EELCFAJF@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs?$AAs?$AA?5@ ; `string'
 PUBLIC	??_C@_1CK@EOPGIILJ@?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAn?$AAu?$AAl?$AAl?$AA?5?$AAp?$AAo?$AAi?$AAn?$AAt?$AAe?$AAr?$AA?$AA@ ; `string'
@@ -1031,16 +1034,13 @@ PUBLIC	??_C@_1PM@HGDEDNCE@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$
 PUBLIC	??_C@_1DI@MDELDGPI@?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ ; `string'
 PUBLIC	??_C@_1PM@NGMJNEOB@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs?$AAs?$AA?5@ ; `string'
 PUBLIC	??_C@_0EJ@IBPBNBIE@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsoft@ ; `string'
-PUBLIC	??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@ ; `string'
 PUBLIC	??_C@_1BGO@ENKEMOHL@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ ; `string'
 PUBLIC	??_C@_1EM@FKAOCOMF@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AA?$CL?$AA?5?$AAo?$AAf?$AAf?$AAs?$AAe?$AAt?$AA?5?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5@ ; `string'
 PUBLIC	??_C@_1BHA@HJAKPBPH@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ ; `string'
 PUBLIC	??_C@_1CO@DGLIKNHI@?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$AA@ ; `string'
 PUBLIC	??_C@_1IO@LKIDJAMC@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@ ; `string'
-PUBLIC	??_C@_1DM@HINDPMBP@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ ; `string'
 PUBLIC	??_C@_1NG@CBDEFPPP@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ ; `string'
 PUBLIC	??_C@_1NM@IAOMKDNC@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ ; `string'
-PUBLIC	??_C@_1EE@EJDKCLKB@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb?$AAl@ ; `string'
 PUBLIC	??_C@_1NO@EALOCOLJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ ; `string'
 PUBLIC	??_R1A@?0A@EA@exception@std@@8			; std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	??_R3exception@std@@8				; std::exception::`RTTI Class Hierarchy Descriptor'
@@ -1301,7 +1301,7 @@ EXTRN	?Instance@Raven_UserOptions@@SAPAV1@XZ:PROC	; Raven_UserOptions::Instance
 EXTRN	??0Raven_WeaponSystem@@QAE@PAVRaven_Bot@@NNN@Z:PROC ; Raven_WeaponSystem::Raven_WeaponSystem
 EXTRN	??1Raven_WeaponSystem@@QAE@XZ:PROC		; Raven_WeaponSystem::~Raven_WeaponSystem
 EXTRN	?Initialize@Raven_WeaponSystem@@QAEXXZ:PROC	; Raven_WeaponSystem::Initialize
-EXTRN	?TakeAimAndShoot@Raven_WeaponSystem@@QBEXXZ:PROC ; Raven_WeaponSystem::TakeAimAndShoot
+EXTRN	?TakeAimAndShoot@Raven_WeaponSystem@@QAEXXZ:PROC ; Raven_WeaponSystem::TakeAimAndShoot
 EXTRN	?SelectWeapon@Raven_WeaponSystem@@QAEXXZ:PROC	; Raven_WeaponSystem::SelectWeapon
 EXTRN	?ChangeWeapon@Raven_WeaponSystem@@QAEXI@Z:PROC	; Raven_WeaponSystem::ChangeWeapon
 EXTRN	?ShootAt@Raven_WeaponSystem@@QBEXUVector2D@@@Z:PROC ; Raven_WeaponSystem::ShootAt
@@ -2529,16 +2529,6 @@ CONST	SEGMENT
 	DB	':', 00H, 'o', 00H, 'p', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't'
 	DB	00H, 'o', 00H, 'r', 00H, ' ', 00H, '+', 00H, '+', 00H, 00H, 00H ; `string'
 CONST	ENDS
-;	COMDAT ??_C@_1EE@EJDKCLKB@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb?$AAl@
-CONST	SEGMENT
-??_C@_1EE@EJDKCLKB@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb?$AAl@ DB 'v'
-	DB	00H, 'e', 00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H
-	DB	'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o'
-	DB	00H, 'r', 00H, ' ', 00H, 'n', 00H, 'o', 00H, 't', 00H, ' ', 00H
-	DB	'i', 00H, 'n', 00H, 'c', 00H, 'r', 00H, 'e', 00H, 'm', 00H, 'e'
-	DB	00H, 'n', 00H, 't', 00H, 'a', 00H, 'b', 00H, 'l', 00H, 'e', 00H
-	DB	00H, 00H					; `string'
-CONST	ENDS
 ;	COMDAT ??_C@_1NM@IAOMKDNC@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@
 CONST	SEGMENT
 ??_C@_1NM@IAOMKDNC@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ DB 's'
@@ -2580,15 +2570,6 @@ CONST	SEGMENT
 	DB	00H, '>', 00H, ' ', 00H, '>', 00H, ' ', 00H, '>', 00H, ':', 00H
 	DB	':', 00H, '_', 00H, 'C', 00H, 'o', 00H, 'm', 00H, 'p', 00H, 'a'
 	DB	00H, 't', 00H, 00H, 00H			; `string'
-CONST	ENDS
-;	COMDAT ??_C@_1DM@HINDPMBP@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@
-CONST	SEGMENT
-??_C@_1DM@HINDPMBP@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ DB 'v'
-	DB	00H, 'e', 00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H
-	DB	'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o'
-	DB	00H, 'r', 00H, 's', 00H, ' ', 00H, 'i', 00H, 'n', 00H, 'c', 00H
-	DB	'o', 00H, 'm', 00H, 'p', 00H, 'a', 00H, 't', 00H, 'i', 00H, 'b'
-	DB	00H, 'l', 00H, 'e', 00H, 00H, 00H		; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_1IO@LKIDJAMC@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 CONST	SEGMENT
@@ -2688,16 +2669,6 @@ CONST	SEGMENT
 	DB	00H, ':', 00H, ':', 00H, 'o', 00H, 'p', 00H, 'e', 00H, 'r', 00H
 	DB	'a', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H, '*', 00H, 00H
 	DB	00H						; `string'
-CONST	ENDS
-;	COMDAT ??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@
-CONST	SEGMENT
-??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@ DB 'v'
-	DB	00H, 'e', 00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H
-	DB	'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o'
-	DB	00H, 'r', 00H, ' ', 00H, 'n', 00H, 'o', 00H, 't', 00H, ' ', 00H
-	DB	'd', 00H, 'e', 00H, 'r', 00H, 'e', 00H, 'f', 00H, 'e', 00H, 'r'
-	DB	00H, 'e', 00H, 'n', 00H, 'c', 00H, 'a', 00H, 'b', 00H, 'l', 00H
-	DB	'e', 00H, 00H, 00H				; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_0EJ@IBPBNBIE@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsoft@
 CONST	SEGMENT
@@ -2952,13 +2923,6 @@ CONST	SEGMENT
 	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, 'a', 00H, 'b', 00H, 'l', 00H
 	DB	'e', 00H, 00H, 00H				; `string'
 CONST	ENDS
-;	COMDAT ??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA?$CC?$AA?$AA@
-CONST	SEGMENT
-??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA?$CC?$AA?$AA@ DB '"'
-	DB	00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H, 'i', 00H
-	DB	'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u', 00H, 'm'
-	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H ; `string'
-CONST	ENDS
 ;	COMDAT ??_C@_1BDM@OEEPLJFA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs?$AAs?$AA?5@
 CONST	SEGMENT
 ??_C@_1BDM@OEEPLJFA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs?$AAs?$AA?5@ DB 's'
@@ -2988,6 +2952,75 @@ CONST	SEGMENT
 	DB	'a', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H, '=', 00H, '='
 	DB	00H, 00H, 00H				; `string'
 CONST	ENDS
+;	COMDAT ??_C@_1EK@PPDBPCAN@?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAo?$AAu?$AAt?$AAs?$AAi?$AAd?$AAe?$AA?5?$AAr@
+CONST	SEGMENT
+??_C@_1EK@PPDBPCAN@?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAo?$AAu?$AAt?$AAs?$AAi?$AAd?$AAe?$AA?5?$AAr@ DB 'm'
+	DB	00H, 'a', 00H, 'p', 00H, '/', 00H, 's', 00H, 'e', 00H, 't', 00H
+	DB	' ', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 's', 00H, 'e', 00H, ' '
+	DB	00H, 'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H
+	DB	'o', 00H, 'r', 00H, ' ', 00H, 'o', 00H, 'u', 00H, 't', 00H, 's'
+	DB	00H, 'i', 00H, 'd', 00H, 'e', 00H, ' ', 00H, 'r', 00H, 'a', 00H
+	DB	'n', 00H, 'g', 00H, 'e', 00H, 00H, 00H	; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1DM@HINDPMBP@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@
+CONST	SEGMENT
+??_C@_1DM@HINDPMBP@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ DB 'v'
+	DB	00H, 'e', 00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H
+	DB	'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o'
+	DB	00H, 'r', 00H, 's', 00H, ' ', 00H, 'i', 00H, 'n', 00H, 'c', 00H
+	DB	'o', 00H, 'm', 00H, 'p', 00H, 'a', 00H, 't', 00H, 'i', 00H, 'b'
+	DB	00H, 'l', 00H, 'e', 00H, 00H, 00H		; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
+CONST	SEGMENT
+??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@ DB 'vector<T> too long'
+	DB	00H						; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@
+CONST	SEGMENT
+??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@ DB 'invalid string posi'
+	DB	'tion', 00H					; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@
+CONST	SEGMENT
+??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@ DB 'string too long', 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1DM@GMPLOCPK@?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAs?$AAu?$AAb?$AAs?$AAc?$AAr?$AAi?$AAp?$AAt?$AA?5?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$AA@
+CONST	SEGMENT
+??_C@_1DM@GMPLOCPK@?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAs?$AAu?$AAb?$AAs?$AAc?$AAr?$AAi?$AAp?$AAt?$AA?5?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$AA@ DB 's'
+	DB	00H, 't', 00H, 'r', 00H, 'i', 00H, 'n', 00H, 'g', 00H, ' ', 00H
+	DB	's', 00H, 'u', 00H, 'b', 00H, 's', 00H, 'c', 00H, 'r', 00H, 'i'
+	DB	00H, 'p', 00H, 't', 00H, ' ', 00H, 'o', 00H, 'u', 00H, 't', 00H
+	DB	' ', 00H, 'o', 00H, 'f', 00H, ' ', 00H, 'r', 00H, 'a', 00H, 'n'
+	DB	00H, 'g', 00H, 'e', 00H, 00H, 00H		; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1EE@EJDKCLKB@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb?$AAl@
+CONST	SEGMENT
+??_C@_1EE@EJDKCLKB@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb?$AAl@ DB 'v'
+	DB	00H, 'e', 00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H
+	DB	'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o'
+	DB	00H, 'r', 00H, ' ', 00H, 'n', 00H, 'o', 00H, 't', 00H, ' ', 00H
+	DB	'i', 00H, 'n', 00H, 'c', 00H, 'r', 00H, 'e', 00H, 'm', 00H, 'e'
+	DB	00H, 'n', 00H, 't', 00H, 'a', 00H, 'b', 00H, 'l', 00H, 'e', 00H
+	DB	00H, 00H					; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@
+CONST	SEGMENT
+??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@ DB 'v'
+	DB	00H, 'e', 00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H
+	DB	'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o'
+	DB	00H, 'r', 00H, ' ', 00H, 'n', 00H, 'o', 00H, 't', 00H, ' ', 00H
+	DB	'd', 00H, 'e', 00H, 'r', 00H, 'e', 00H, 'f', 00H, 'e', 00H, 'r'
+	DB	00H, 'e', 00H, 'n', 00H, 'c', 00H, 'a', 00H, 'b', 00H, 'l', 00H
+	DB	'e', 00H, 00H, 00H				; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA?$CC?$AA?$AA@
+CONST	SEGMENT
+??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA?$CC?$AA?$AA@ DB '"'
+	DB	00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H, 'i', 00H
+	DB	'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u', 00H, 'm'
+	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H ; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_1FO@GJIHNDLM@?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5@
 CONST	SEGMENT
 ??_C@_1FO@GJIHNDLM@?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5@ DB '"'
@@ -3014,15 +3047,17 @@ CONST	SEGMENT
 	DB	'c', 00H, 'o', 00H, 'm', 00H, 'p', 00H, 'a', 00H, 't', 00H, 'i'
 	DB	00H, 'b', 00H, 'l', 00H, 'e', 00H, 00H, 00H	; `string'
 CONST	ENDS
-;	COMDAT ??_C@_1EK@PPDBPCAN@?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAo?$AAu?$AAt?$AAs?$AAi?$AAd?$AAe?$AA?5?$AAr@
+;	COMDAT ??_C@_01LFCBOECM@?4?$AA@
 CONST	SEGMENT
-??_C@_1EK@PPDBPCAN@?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAo?$AAu?$AAt?$AAs?$AAi?$AAd?$AAe?$AA?5?$AAr@ DB 'm'
-	DB	00H, 'a', 00H, 'p', 00H, '/', 00H, 's', 00H, 'e', 00H, 't', 00H
-	DB	' ', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 's', 00H, 'e', 00H, ' '
-	DB	00H, 'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H
-	DB	'o', 00H, 'r', 00H, ' ', 00H, 'o', 00H, 'u', 00H, 't', 00H, 's'
-	DB	00H, 'i', 00H, 'd', 00H, 'e', 00H, ' ', 00H, 'r', 00H, 'a', 00H
-	DB	'n', 00H, 'g', 00H, 'e', 00H, 00H, 00H	; `string'
+??_C@_01LFCBOECM@?4?$AA@ DB '.', 00H			; `string'
+CONST	ENDS
+;	COMDAT ??_C@_02OOPEBDOJ@pP?$AA@
+CONST	SEGMENT
+??_C@_02OOPEBDOJ@pP?$AA@ DB 'pP', 00H			; `string'
+CONST	ENDS
+;	COMDAT ??_C@_02MDKMJEGG@eE?$AA@
+CONST	SEGMENT
+??_C@_02MDKMJEGG@eE?$AA@ DB 'eE', 00H			; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_1IK@GEHGEPIJ@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
 CONST	SEGMENT
@@ -3038,41 +3073,6 @@ CONST	SEGMENT
 	DB	00H, 'C', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c', 00H, 'l', 00H
 	DB	'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H, 't', 00H, 'r'
 	DB	00H, 'e', 00H, 'e', 00H, 00H, 00H		; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-CONST	SEGMENT
-??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@ DB 'vector<T> too long'
-	DB	00H						; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@
-CONST	SEGMENT
-??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@ DB 'invalid string posi'
-	DB	'tion', 00H					; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@
-CONST	SEGMENT
-??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@ DB 'string too long', 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_C@_1DM@GMPLOCPK@?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAs?$AAu?$AAb?$AAs?$AAc?$AAr?$AAi?$AAp?$AAt?$AA?5?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$AA@
-CONST	SEGMENT
-??_C@_1DM@GMPLOCPK@?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAs?$AAu?$AAb?$AAs?$AAc?$AAr?$AAi?$AAp?$AAt?$AA?5?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$AA@ DB 's'
-	DB	00H, 't', 00H, 'r', 00H, 'i', 00H, 'n', 00H, 'g', 00H, ' ', 00H
-	DB	's', 00H, 'u', 00H, 'b', 00H, 's', 00H, 'c', 00H, 'r', 00H, 'i'
-	DB	00H, 'p', 00H, 't', 00H, ' ', 00H, 'o', 00H, 'u', 00H, 't', 00H
-	DB	' ', 00H, 'o', 00H, 'f', 00H, ' ', 00H, 'r', 00H, 'a', 00H, 'n'
-	DB	00H, 'g', 00H, 'e', 00H, 00H, 00H		; `string'
-CONST	ENDS
-;	COMDAT ??_C@_01LFCBOECM@?4?$AA@
-CONST	SEGMENT
-??_C@_01LFCBOECM@?4?$AA@ DB '.', 00H			; `string'
-CONST	ENDS
-;	COMDAT ??_C@_02OOPEBDOJ@pP?$AA@
-CONST	SEGMENT
-??_C@_02OOPEBDOJ@pP?$AA@ DB 'pP', 00H			; `string'
-CONST	ENDS
-;	COMDAT ??_C@_02MDKMJEGG@eE?$AA@
-CONST	SEGMENT
-??_C@_02MDKMJEGG@eE?$AA@ DB 'eE', 00H			; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_1KC@ILGGEGM@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAs?$AAt?$AAr?$AAu?$AAc?$AAt?$AA?5?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA2?$AAD?$AA?0?$AAc?$AAl?$AAa?$AAs@
 CONST	SEGMENT
@@ -35380,10 +35380,10 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG165469
+	push	OFFSET $SG170674
 	lea	edx, DWORD PTR $T1[ebp]
 	push	edx
-	push	OFFSET $SG165468
+	push	OFFSET $SG170673
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BO@$$CBD@DebugConsole@@QAEAAV0@AAY0BO@$$CBD@Z ; DebugConsole::operator<<<char const [30]>
@@ -35444,10 +35444,10 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG165460
+	push	OFFSET $SG170665
 	lea	eax, DWORD PTR $T1[ebp]
 	push	eax
-	push	OFFSET $SG165459
+	push	OFFSET $SG170664
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BG@$$CBD@DebugConsole@@QAEAAV0@AAY0BG@$$CBD@Z ; DebugConsole::operator<<<char const [22]>
@@ -36000,7 +36000,7 @@ $LN1@ReduceHeal:
 ; 342  : 
 ; 343  :   m_iNumUpdatesHitPersistant = (int)(FrameRate * script->GetDouble("HitFlashTime"));
 
-	push	OFFSET $SG165450
+	push	OFFSET $SG170655
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -36715,7 +36715,7 @@ $LN1@Update:
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+172]
-	call	?TakeAimAndShoot@Raven_WeaponSystem@@QBEXXZ ; Raven_WeaponSystem::TakeAimAndShoot
+	call	?TakeAimAndShoot@Raven_WeaponSystem@@QAEXXZ ; Raven_WeaponSystem::TakeAimAndShoot
 $LN6@Update:
 
 ; 163  :   }
@@ -37099,7 +37099,7 @@ $LN3@Render:
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
 	mov	eax, DWORD PTR tv333[ebp]
 	push	eax
-	push	OFFSET $SG165599
+	push	OFFSET $SG170804
 	lea	ecx, DWORD PTR $T21[ebp]
 	push	ecx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
@@ -37165,7 +37165,7 @@ $LN2@Render:
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
 	mov	ecx, DWORD PTR tv337[ebp]
 	push	ecx
-	push	OFFSET $SG165606
+	push	OFFSET $SG170811
 	lea	edx, DWORD PTR $T19[ebp]
 	push	edx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
@@ -37315,11 +37315,11 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T18[ebp], eax
-	push	OFFSET $SG165341
-	push	OFFSET $SG165340
+	push	OFFSET $SG170546
+	push	OFFSET $SG170545
 	lea	ecx, DWORD PTR $T18[ebp]
 	push	ecx
-	push	OFFSET $SG165339
+	push	OFFSET $SG170544
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BK@$$CBD@DebugConsole@@QAEAAV0@AAY0BK@$$CBD@Z ; DebugConsole::operator<<<char const [26]>
@@ -37609,25 +37609,25 @@ _pos$ = 12						; size = 16
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-	push	OFFSET $SG165255
+	push	OFFSET $SG170460
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG165256
+	push	OFFSET $SG170461
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG165257
+	push	OFFSET $SG170462
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG165258
+	push	OFFSET $SG170463
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37645,7 +37645,7 @@ _pos$ = 12						; size = 16
 	mov	DWORD PTR [ecx+8], edx
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
-	push	OFFSET $SG165259
+	push	OFFSET $SG170464
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37669,7 +37669,7 @@ _pos$ = 12						; size = 16
 	mov	DWORD PTR [ecx+8], edx
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
-	push	OFFSET $SG165260
+	push	OFFSET $SG170465
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37693,7 +37693,7 @@ _pos$ = 12						; size = 16
 	mov	DWORD PTR [ecx+8], edx
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
-	push	OFFSET $SG165261
+	push	OFFSET $SG170466
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37725,13 +37725,13 @@ _pos$ = 12						; size = 16
 	mov	DWORD PTR [eax+160], 0
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx+164], 0
-	push	OFFSET $SG165262
+	push	OFFSET $SG170467
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [edx+196], eax
-	push	OFFSET $SG165263
+	push	OFFSET $SG170468
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt
@@ -37742,7 +37742,7 @@ _pos$ = 12						; size = 16
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 208				; 000000d0H
 	call	??0Vector2D@@QAE@XZ			; Vector2D::Vector2D
-	push	OFFSET $SG165264
+	push	OFFSET $SG170469
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37752,7 +37752,7 @@ _pos$ = 12						; size = 16
 	add	esp, 8
 	mov	eax, DWORD PTR _this$[ebp]
 	fstp	QWORD PTR [eax+224]
-	push	OFFSET $SG165265
+	push	OFFSET $SG170470
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37871,7 +37871,7 @@ $LN6@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	cmp	DWORD PTR $T18[ebp], 0
 	je	SHORT $LN7@Raven_Bot
-	push	OFFSET $SG165278
+	push	OFFSET $SG170483
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37900,7 +37900,7 @@ $LN8@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 6
 	cmp	DWORD PTR $T16[ebp], 0
 	je	SHORT $LN9@Raven_Bot
-	push	OFFSET $SG165283
+	push	OFFSET $SG170488
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37929,7 +37929,7 @@ $LN10@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 7
 	cmp	DWORD PTR $T14[ebp], 0
 	je	SHORT $LN11@Raven_Bot
-	push	OFFSET $SG165288
+	push	OFFSET $SG170493
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37958,7 +37958,7 @@ $LN12@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 8
 	cmp	DWORD PTR $T12[ebp], 0
 	je	SHORT $LN13@Raven_Bot
-	push	OFFSET $SG165293
+	push	OFFSET $SG170498
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -37987,7 +37987,7 @@ $LN14@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 9
 	cmp	DWORD PTR $T10[ebp], 0
 	je	SHORT $LN15@Raven_Bot
-	push	OFFSET $SG165298
+	push	OFFSET $SG170503
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -38067,26 +38067,26 @@ $LN20@Raven_Bot:
 ; 80   :                                         script->GetDouble("Bot_AimAccuracy"),
 ; 81   :                                         script->GetDouble("Bot_AimPersistance"));
 
-	push	48					; 00000030H
+	push	72					; 00000048H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T4[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 12		; 0000000cH
 	cmp	DWORD PTR $T4[ebp], 0
 	je	SHORT $LN21@Raven_Bot
-	push	OFFSET $SG165311
+	push	OFFSET $SG170516
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG165312
+	push	OFFSET $SG170517
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG165313
+	push	OFFSET $SG170518
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -38118,7 +38118,7 @@ $LN22@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 13		; 0000000dH
 	cmp	DWORD PTR $T2[ebp], 0
 	je	SHORT $LN23@Raven_Bot
-	push	OFFSET $SG165318
+	push	OFFSET $SG170523
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -38327,7 +38327,7 @@ __$ArrayPad$ = -4					; size = 4
 
 ; 551  :   double scale = script->GetDouble("Bot_Scale");
 
-	push	OFFSET $SG165617
+	push	OFFSET $SG170822
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble

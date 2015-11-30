@@ -12,10 +12,8 @@ INCLUDELIB OLDNAMES
 CONST	SEGMENT
 _Pi	DQ	0400921f9f01b866er		; 3.14159
 _pi	DQ	0400921f9f01b866er		; 3.14159
-$SG146097 DB	'AT: ', 00H
+$SG151302 DB	'AT: ', 00H
 	ORG $+3
-$SG146195 DB	', ', 00H
-	ORG $+1
 _colors	DD	0ffH
 	DD	0ff0000H
 	DD	0ff00H
@@ -31,6 +29,7 @@ _colors	DD	0ffH
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
+$SG151400 DB	', ', 00H
 CONST	ENDS
 PUBLIC	_hypot
 PUBLIC	?max@?$numeric_limits@H@std@@SAHXZ		; std::numeric_limits<int>::max
@@ -13223,7 +13222,7 @@ _pBot$ = 24						; size = 4
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 	mov	ecx, DWORD PTR tv161[ebp]
 	push	ecx
-	push	OFFSET $SG146097
+	push	OFFSET $SG151302
 	lea	edx, DWORD PTR $T10[ebp]
 	push	edx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
@@ -13284,7 +13283,7 @@ _pBot$ = 24						; size = 4
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
 	mov	ecx, DWORD PTR tv165[ebp]
 	push	ecx
-	push	OFFSET $SG146195
+	push	OFFSET $SG151400
 	push	2
 	lea	edx, DWORD PTR $T4[ebp]
 	push	edx

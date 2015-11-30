@@ -5590,7 +5590,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 69   :   return m_pOwner->GetSensoryMem()->GetTimeOpponentHasBeenOutOfView(m_pCurrentTarget);
+; 69   : 	return m_pOwner->GetSensoryMem()->GetTimeOpponentHasBeenOutOfView(m_pCurrentTarget);
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+4]
@@ -5626,7 +5626,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 64   :   return m_pOwner->GetSensoryMem()->GetTimeOpponentHasBeenVisible(m_pCurrentTarget);
+; 64   : 	return m_pOwner->GetSensoryMem()->GetTimeOpponentHasBeenVisible(m_pCurrentTarget);
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+4]
@@ -5663,7 +5663,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 59   :   return m_pOwner->GetSensoryMem()->GetLastRecordedPositionOfOpponent(m_pCurrentTarget);
+; 59   : 	return m_pOwner->GetSensoryMem()->GetLastRecordedPositionOfOpponent(m_pCurrentTarget);
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+4]
@@ -5702,7 +5702,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 54   :   return m_pOwner->GetSensoryMem()->isOpponentShootable(m_pCurrentTarget);
+; 54   : 	return m_pOwner->GetSensoryMem()->isOpponentShootable(m_pCurrentTarget);
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+4]
@@ -5738,7 +5738,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 49   :   return m_pOwner->GetSensoryMem()->isOpponentWithinFOV(m_pCurrentTarget);
+; 49   : 	return m_pOwner->GetSensoryMem()->isOpponentWithinFOV(m_pCurrentTarget);
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+4]
@@ -5806,25 +5806,25 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 20   :   double ClosestDistSoFar = MaxDouble;
+; 20   : 	double ClosestDistSoFar = MaxDouble;
 
 	movsd	xmm0, QWORD PTR _MaxDouble
 	movsd	QWORD PTR _ClosestDistSoFar$[ebp], xmm0
 
-; 21   :   m_pCurrentTarget       = 0;
+; 21   : 	m_pCurrentTarget = 0;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax+4], 0
 
 ; 22   : 
-; 23   :   //grab a list of all the opponents the owner can sense
-; 24   :   std::list<Raven_Bot*> SensedBots;
+; 23   : 	//grab a list of all the opponents the owner can sense
+; 24   : 	std::list<Raven_Bot*> SensedBots;
 
 	lea	ecx, DWORD PTR _SensedBots$[ebp]
 	call	??0?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAE@XZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::list<Raven_Bot *,std::allocator<Raven_Bot *> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 25   :   SensedBots = m_pOwner->GetSensoryMem()->GetListOfRecentlySensedOpponents();
+; 25   : 	SensedBots = m_pOwner->GetSensoryMem()->GetListOfRecentlySensedOpponents();
 
 	lea	ecx, DWORD PTR $T7[ebp]
 	push	ecx
@@ -5845,8 +5845,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T7[ebp]
 	call	??1?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAE@XZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::~list<Raven_Bot *,std::allocator<Raven_Bot *> >
 
-; 26   :   
-; 27   :   std::list<Raven_Bot*>::const_iterator curBot = SensedBots.begin();
+; 26   : 
+; 27   : 	std::list<Raven_Bot*>::const_iterator curBot = SensedBots.begin();
 
 	lea	edx, DWORD PTR $T6[ebp]
 	push	edx
@@ -5866,7 +5866,7 @@ __$EHRec$ = -12						; size = 12
 	jmp	SHORT $LN5@Update
 $LN4@Update:
 
-; 28   :   for (curBot; curBot != SensedBots.end(); ++curBot)
+; 28   : 	for (curBot; curBot != SensedBots.end(); ++curBot)
 
 	lea	ecx, DWORD PTR _curBot$[ebp]
 	call	??E?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAEAAV01@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator++
@@ -5891,9 +5891,9 @@ $LN5@Update:
 	test	edx, edx
 	je	$LN3@Update
 
-; 29   :   {
-; 30   :     //make sure the bot is alive and that it is not the owner
-; 31   :     if ((*curBot)->isAlive() && (*curBot != m_pOwner) )
+; 29   : 	{
+; 30   : 		//make sure the bot is alive and that it is not the owner
+; 31   : 		if ((*curBot)->isAlive() && (*curBot != m_pOwner))
 
 	lea	ecx, DWORD PTR _curBot$[ebp]
 	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
@@ -5909,8 +5909,8 @@ $LN5@Update:
 	cmp	edx, DWORD PTR [ecx]
 	je	SHORT $LN1@Update
 
-; 32   :     {
-; 33   :       double dist = Vec2DDistanceSq((*curBot)->Pos(), m_pOwner->Pos());
+; 32   : 		{
+; 33   : 			double dist = Vec2DDistanceSq((*curBot)->Pos(), m_pOwner->Pos());
 
 	lea	eax, DWORD PTR $T3[ebp]
 	push	eax
@@ -5930,19 +5930,19 @@ $LN5@Update:
 	fstp	QWORD PTR _dist$8[ebp]
 
 ; 34   : 
-; 35   :       if (dist < ClosestDistSoFar)
+; 35   : 			if (dist < ClosestDistSoFar)
 
 	movsd	xmm0, QWORD PTR _ClosestDistSoFar$[ebp]
 	comisd	xmm0, QWORD PTR _dist$8[ebp]
 	jbe	SHORT $LN1@Update
 
-; 36   :       {
-; 37   :         ClosestDistSoFar = dist;
+; 36   : 			{
+; 37   : 				ClosestDistSoFar = dist;
 
 	movsd	xmm0, QWORD PTR _dist$8[ebp]
 	movsd	QWORD PTR _ClosestDistSoFar$[ebp], xmm0
 
-; 38   :         m_pCurrentTarget = *curBot;
+; 38   : 				m_pCurrentTarget = *curBot;
 
 	lea	ecx, DWORD PTR _curBot$[ebp]
 	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
@@ -5951,9 +5951,9 @@ $LN5@Update:
 	mov	DWORD PTR [ecx+4], edx
 $LN1@Update:
 
-; 39   :       }
-; 40   :     }
-; 41   :   }
+; 39   : 			}
+; 40   : 		}
+; 41   : 	}
 
 	jmp	$LN4@Update
 $LN3@Update:
