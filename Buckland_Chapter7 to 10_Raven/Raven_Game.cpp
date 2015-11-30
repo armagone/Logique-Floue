@@ -26,6 +26,8 @@
 #include "goals/Goal_Think.h"
 #include "goals/Raven_Goal_Types.h"
 
+#include "debug/DebugConsole.h"
+
 
 
 //uncomment to write object creation/deletion to debug console
@@ -163,7 +165,26 @@ void Raven_Game::Update()
     {
 
       //create a grave
-		m_pGraveMarkers->AddGrave((*curBot)->Pos(), (*curBot)->GetTeamId(), (*curBot)->GetWeaponSys()->GetCurrentWeaponId());
+		GraveMarkers::GraveRecord grave = m_pGraveMarkers->AddGrave((*curBot)->Pos(), (*curBot)->GetTeamId(), (*curBot)->GetWeaponSys()->GetCurrentWeaponId());
+
+		GraveMarkers::GraveRecord* gravePtr = &grave;
+
+		std::list<Raven_Bot*>::iterator curBot2 = m_Bots.begin();
+		for (curBot2; curBot2 != m_Bots.end(); ++curBot2)
+		{
+			//send a message to all my team
+			if ((*curBot2)->GetTeamId() == (*curBot)->GetTeamId())
+			{
+				Dispatcher->DispatchMsg(SEND_MSG_IMMEDIATELY,
+					(*curBot)->ID(),
+					(*curBot2)->ID(),
+					Msg_IWasKilledAndIHadWeapons,
+					(void*)gravePtr);
+
+				//debug_con << "Bot " << ttos((*curBot)->ID()) << " : I'm dead : team (" << ttos(gravePtr->teamId) << ") ";
+			}
+			
+		}
 
       //change its status to spawning
       (*curBot)->SetSpawning();
@@ -607,6 +628,7 @@ Raven_Game::GetAllBotsInFOV(const Raven_Bot* pBot)const
 
   return VisibleBots;
 }
+
 
 //---------------------------- isSecondVisibleToFirst -------------------------
 

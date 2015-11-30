@@ -14,6 +14,8 @@
 #include <list>
 #include "2d/vector2d.h"
 
+#include "GraveMarkers.h"
+
 class Raven_Bot;
 
 
@@ -84,6 +86,9 @@ private:
 	//by UpdateWithSoundSource & UpdateVision)
 	void       MakeNewRecordIfNotAlreadyPresent(Raven_Bot* pBot);
 
+	//the owner of this instance
+	GraveMarkers::GraveRecord* m_nearestGrave;
+
 public:
 
 	Raven_SensoryMemory(Raven_Bot* owner, double MemorySpan);
@@ -94,6 +99,10 @@ public:
 
 	//this removes a bot's record from memory
 	void     RemoveBotFromMemory(Raven_Bot* pBot);
+
+	//add a grave record
+	void     AddGraveToMemory(GraveMarkers::GraveRecord* pGraveRecord);
+	
 
 	//this method iterates through all the opponents in the game world and 
 	//updates the records of those that are in the owner's FOV

@@ -17,7 +17,7 @@
 
 class GraveMarkers
 {
-private:
+public:
   
   struct GraveRecord
   {
@@ -56,7 +56,9 @@ public:
 
   void Update();
   void Render();
-  void AddGrave(Vector2D pos, int teamId, int lastWeaponUsed);
+  GraveMarkers::GraveRecord AddGrave(Vector2D pos, int teamId, int lastWeaponUsed);
+  GraveList GetList(){ return m_GraveList; };
+
 
 };
 

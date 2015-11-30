@@ -70,7 +70,9 @@ void GraveMarkers::Render()
   }
 }
 
-void GraveMarkers::AddGrave(Vector2D pos, int teamId, int weaponId)
+GraveMarkers::GraveRecord GraveMarkers::AddGrave(Vector2D pos, int teamId, int weaponId)
 {
-	m_GraveList.push_back(GraveRecord(pos, teamId, weaponId));
+	GraveRecord grave = GraveRecord(pos, teamId, weaponId);
+	m_GraveList.push_back(grave);
+	return grave;
 }

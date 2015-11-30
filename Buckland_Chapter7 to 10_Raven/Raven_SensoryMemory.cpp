@@ -8,7 +8,8 @@
 //-----------------------------------------------------------------------------
 Raven_SensoryMemory::Raven_SensoryMemory(Raven_Bot* owner,
 	double MemorySpan) :m_pOwner(owner),
-	m_dMemorySpan(MemorySpan)
+	m_dMemorySpan(MemorySpan),
+	m_nearestGrave(nullptr)
 
 {}
 
@@ -132,8 +133,19 @@ void Raven_SensoryMemory::UpdateVision()
 			}
 		}
 	}//next bot
+	
+	// update grave and check if somebody took it
+	if (m_nearestGrave != nullptr && m_nearestGrave->lastWeaponUsed == 0)
+		m_nearestGrave = nullptr;
+	
 }
 
+
+void Raven_SensoryMemory::AddGraveToMemory(GraveMarkers::GraveRecord* pGraveRecord)
+{
+	if (m_nearestGrave == nullptr || m_nearestGrave->lastWeaponUsed == 0)
+		m_nearestGrave = pGraveRecord;
+}
 
 //------------------------ GetListOfRecentlySensedOpponents -------------------
 //

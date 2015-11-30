@@ -274,6 +274,15 @@ bool Raven_Bot::HandleMessage(const Telegram& msg)
 
       return true;
     }
+  case Msg_IWasKilledAndIHadWeapons:
+  {
+
+	  GraveMarkers::GraveRecord* pGrave = (GraveMarkers::GraveRecord*)msg.ExtraInfo;
+
+	  GetSensoryMem()->AddGraveToMemory(pGrave);
+
+	  return true;
+  }
 
 
   default: return false;
