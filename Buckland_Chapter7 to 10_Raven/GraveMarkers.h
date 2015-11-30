@@ -23,9 +23,13 @@ private:
   {
     Vector2D Position;
     double    TimeCreated;
+	int teamId;
+	int lastWeaponUsed;
 
-    GraveRecord(Vector2D pos):Position(pos),
-                              TimeCreated(Clock->GetCurrentTime())
+	GraveRecord(Vector2D pos, int teamId, int lastWeaponUsed) :Position(pos),
+							TimeCreated(Clock->GetCurrentTime()), 
+							teamId(teamId),
+							lastWeaponUsed(lastWeaponUsed)
     {}
   };
 
@@ -37,6 +41,8 @@ private:
 
   //how long a grave remains on screen
   double m_dLifeTime;
+  // 
+  int m_teamId;
 
   //when a bot dies, a grave is rendered to mark the spot.
   std::vector<Vector2D>   m_vecRIPVB;
@@ -50,7 +56,7 @@ public:
 
   void Update();
   void Render();
-  void AddGrave(Vector2D pos);
+  void AddGrave(Vector2D pos, int teamId, int lastWeaponUsed);
 
 };
 
