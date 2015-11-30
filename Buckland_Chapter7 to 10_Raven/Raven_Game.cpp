@@ -246,11 +246,21 @@ bool Raven_Game::AttemptToAddBot(Raven_Bot* pBot)
 //-----------------------------------------------------------------------------
 void Raven_Game::AddBots(unsigned int NumBotsToAdd)
 { 
+	int equipe = NumBotsToAdd * 0.5;
+
   while (NumBotsToAdd--)
   {
     //create a bot. (its position is irrelevant at this point because it will
     //not be rendered until it is spawned)
     Raven_Bot* rb = new Raven_Bot(this, Vector2D());
+
+	if (NumBotsToAdd >= equipe)
+	{
+		rb->SetTeamId(1);
+	}
+	else{
+		rb->SetTeamId(2);
+	}
 
     //switch the default steering behaviors on
     rb->GetSteering()->WallAvoidanceOn();
@@ -396,7 +406,7 @@ bool Raven_Game::LoadMap(const std::string& filename)
   //load the new map data
   if (m_pMap->LoadMap(filename))
   { 
-    AddBots(script->GetInt("NumBots"));
+	  AddBots(6);// script->GetInt("NumBots"));
   
     return true;
   }

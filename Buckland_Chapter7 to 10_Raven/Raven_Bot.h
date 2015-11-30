@@ -40,8 +40,10 @@ private:
 
 private:
 
-  //alive, dead or spawning?
-  Status                             m_Status;
+	//alive, dead or spawning?
+	Status                             m_Status;
+	// id d'équipe
+	int                             m_teamId;
 
   //a pointer to the world data
   Raven_Game*                        m_pWorld;
@@ -160,6 +162,9 @@ public:
   void          SetSpawning(){m_Status = spawning;}
   void          SetDead(){m_Status = dead;}
   void          SetAlive(){m_Status = alive;}
+  
+  void          SetTeamId(int teamId){ m_teamId = teamId; }
+  int           GetTeamId()const{ return m_teamId; }
 
   //returns a value indicating the time in seconds it will take the bot
   //to reach the given position at its current speed.
