@@ -6,7 +6,6 @@
 #include "../lua/Raven_Scriptor.h"
 #include "fuzzy/FuzzyOperators.h"
 
-
 //--------------------------- ctor --------------------------------------------
 //-----------------------------------------------------------------------------
 RocketLauncher::RocketLauncher(Raven_Bot*   owner) :
@@ -87,11 +86,12 @@ double RocketLauncher::GetDesirability(double DistToTarget)
 //-----------------------------------------------------------------------------
 void RocketLauncher::InitializeFuzzyModule()
 {
-	/* Variables & Ensembles flous */
+	/* Fuzzy Variables */
 	FuzzyVariable& DistToTarget = m_FuzzyModule.CreateFLV("DistToTarget");
 	FuzzyVariable& Desirability = m_FuzzyModule.CreateFLV("Desirability");
 	FuzzyVariable& AmmoStatus = m_FuzzyModule.CreateFLV("AmmoStatus");
 
+	/* Fuzzy Sets */
 	FzSet& Target_VeryClose = DistToTarget.AddLeftShoulderSet("Target_VeryClose", 0, 25, 50);
 	FzSet& Target_Close = DistToTarget.AddTriangularSet("Target_Close", 25, 50, 100);
 	FzSet& Target_Medium = DistToTarget.AddTriangularSet("Target_Medium", 100, 150, 200);
@@ -110,6 +110,7 @@ void RocketLauncher::InitializeFuzzyModule()
 	FzSet& Ammo_Low = AmmoStatus.AddTriangularSet("Ammo_Low", 0, 5, 15);
 	FzSet& Ammo_AlmostEmpty = AmmoStatus.AddTriangularSet("Ammo_AlmostEmpty", 0, 0, 5);
 
+	/* Fuzzy Rules */
 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_AlmostEmpty), Undesirable);
 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_Low), Undesirable);
 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Ammo_Okay), Undesirable);
