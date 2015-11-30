@@ -485,8 +485,9 @@ void Raven_Bot::Render()
 
 
   if (isDead() || isSpawning()) return;
-  
-  gdi->BluePen();
+
+  if (GetTeamId() == 1) gdi->BluePen();
+  else if (GetTeamId() == 2) gdi->GreenPen();
   
   m_vecBotVBTrans = WorldTransform(m_vecBotVB,
                                    Pos(),
@@ -518,7 +519,10 @@ void Raven_Bot::Render()
   }
 
   gdi->TransparentText();
-  gdi->TextColor(0,255,0);
+
+  if (GetTeamId() == 1) gdi->TextColor(0, 0, 255);
+  else if (GetTeamId() == 2) gdi->TextColor(0, 255, 0);
+  
 
   if (UserOptions->m_bShowBotIDs)
   {

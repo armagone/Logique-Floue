@@ -39,7 +39,8 @@ Raven_Game::Raven_Game():m_pSelectedBot(NULL),
                          m_bRemoveABot(false),
                          m_pMap(NULL),
                          m_pPathManager(NULL),
-                         m_pGraveMarkers(NULL)
+                         m_pGraveMarkers(NULL),
+						 m_lastTeamSpawned(1)
 {
   //load in the default map
   LoadMap(script->GetString("StartMap"));
@@ -160,8 +161,9 @@ void Raven_Game::Update()
     //then change its status to 'respawning'
     else if ((*curBot)->isDead())
     {
+
       //create a grave
-      m_pGraveMarkers->AddGrave((*curBot)->Pos());
+		m_pGraveMarkers->AddGrave((*curBot)->Pos(), (*curBot)->GetTeamId(), (*curBot)->GetWeaponSys()->GetCurrentWeaponId());
 
       //change its status to spawning
       (*curBot)->SetSpawning();
@@ -251,6 +253,9 @@ void Raven_Game::AddBots(unsigned int NumBotsToAdd)
     //create a bot. (its position is irrelevant at this point because it will
     //not be rendered until it is spawned)
     Raven_Bot* rb = new Raven_Bot(this, Vector2D());
+
+	m_lastTeamSpawned = (m_lastTeamSpawned == 1) ? 2 : 1; 
+	rb->SetTeamId(m_lastTeamSpawned);
 
     //switch the default steering behaviors on
     rb->GetSteering()->WallAvoidanceOn();
@@ -396,7 +401,7 @@ bool Raven_Game::LoadMap(const std::string& filename)
   //load the new map data
   if (m_pMap->LoadMap(filename))
   { 
-    AddBots(script->GetInt("NumBots"));
+	  AddBots(script->GetInt("NumBots"));
   
     return true;
   }
