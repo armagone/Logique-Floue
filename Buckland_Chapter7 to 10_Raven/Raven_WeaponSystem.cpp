@@ -190,6 +190,9 @@ void  Raven_WeaponSystem::AddWeapon(unsigned int weapon_type)
 
 		w = new RocketLauncher(m_pOwner); break;
 
+	default:
+		return;
+
 	}//end switch
 
 
@@ -424,8 +427,17 @@ void Raven_WeaponSystem::RenderDesirabilities()const
 }
 
 
-int Raven_WeaponSystem::GetCurrentWeaponId()const{
-	if (GetCurrentWeapon() == nullptr) return 0;
-	int idWeapon = GetCurrentWeapon()->GetType();
-	return idWeapon;
+int Raven_WeaponSystem::GetCurrentWeaponId(){
+
+	Raven_Weapon* present = GetWeaponFromInventory(type_rocket_launcher);
+
+	if (present) return type_rocket_launcher;
+
+	present = GetWeaponFromInventory(type_shotgun);
+	if (present) return type_rocket_launcher;
+
+	present = GetWeaponFromInventory(type_rail_gun);
+	if (present) return type_rail_gun;
+	
+	return type_rail_gun;
 }

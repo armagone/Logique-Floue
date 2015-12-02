@@ -9,10 +9,12 @@
 
 #include "triggers/Trigger_HealthGiver.h"
 #include "triggers/Trigger_WeaponGiver.h"
+#include "triggers/Trigger_TeamGiver.h"
 #include "triggers/Trigger_OnButtonSendMsg.h"
 #include "triggers/Trigger_SoundNotify.h"
 
 #include "Raven_UserOptions.h"
+#include "GraveMarkers.h"
 
 
 //uncomment to write object creation/deletion to debug console
@@ -163,6 +165,30 @@ void Raven_Map::AddWeapon_Giver(int type_of_weapon, std::ifstream& in)
   EntityMgr->RegisterEntity(wg);
 }
 
+
+void Raven_Map::AddTeam_Giver(int idTeam, int type_of_weapon, Vector2D position, int nodeId, GraveMarkers::GraveRecord &grave)
+{
+	Trigger_TeamGiver* wg = new Trigger_TeamGiver();
+
+	wg->SetIdTeam(idTeam);
+	wg->SetPos(position);
+	wg->SetEntityType(type_of_weapon);
+	wg->SetGrave(grave);
+
+	wg->SetRangeAndTrigger(nodeId);
+
+	//add it to the appropriate vectors
+	m_TriggerSystem.Register(wg);
+
+
+	//La suite est utile si on a besoin de retrouver une tombe
+	NavGraph::NodeType& node = m_pNavGraph->GetNode(wg->GraphNodeIndex());
+
+	node.SetExtraInfo(wg);
+
+	//register the entity 
+	EntityMgr->RegisterEntity(wg);
+}
 
 //------------------------- LoadMap ------------------------------------
 //

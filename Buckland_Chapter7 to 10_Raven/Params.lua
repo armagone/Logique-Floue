@@ -18,13 +18,13 @@ NumCellsX = 10
 NumCellsY = 10
 
 --how long the graves remain on screen
-GraveLifetime = 45
+GraveLifetime = 10
 
 
 -------------------------[[ bot parameters ]]----------------------------------
 -------------------------------------------------------------------------------
 
-Bot_MaxHealth = 100
+Bot_MaxHealth = 20
 Bot_MaxSpeed  = 1
 Bot_Mass      = 1
 Bot_MaxForce  = 1.0

@@ -30,6 +30,10 @@ int ItemTypeToGoalType(int gt)
 
     return goal_get_rocket_launcher;
 
+  case type_grave:
+
+	  return goal_goto_grave;
+
   default: throw std::runtime_error("Goal_GetItem cannot determine item type");
 
   }//end switch

@@ -24,6 +24,7 @@
 #include "Graph/GraphNodeTypes.h"
 #include "misc/CellSpacePartition.h"
 #include "triggers/TriggerSystem.h"
+#include "GraveMarkers.h"
 
 class BaseGameEntity;
 class Raven_Door;
@@ -82,6 +83,9 @@ private:
   void AddSpawnPoint(std::ifstream& in);
   void AddHealth_Giver(std::ifstream& in);
   void AddWeapon_Giver(int type_of_weapon, std::ifstream& in);
+
+  
+  
   void AddDoor(std::ifstream& in);
   void AddDoorTrigger(std::ifstream& in);
 
@@ -100,6 +104,8 @@ public:
   //adds a wall and returns a pointer to that wall. (this method can be
   //used by objects such as doors to add walls to the environment)
   Wall2D* AddWall(Vector2D from, Vector2D to);
+
+  void AddTeam_Giver(int idTeam, int type_of_weapon, Vector2D pos, int nodeId, GraveMarkers::GraveRecord &gravePtr);
 
   void    AddSoundTrigger(Raven_Bot* pSoundSource, double range);
 

@@ -51,6 +51,8 @@ public:
   //and the owner
   bool       isTargetShootable()const;
 
+  bool  seeGrave()const;
+
   //returns the position the target was last seen. Throws an exception if
   //there is no target currently assigned
   Vector2D   GetLastRecordedPosition()const;

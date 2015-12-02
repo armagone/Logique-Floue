@@ -147,6 +147,16 @@ void Raven_SensoryMemory::AddGraveToMemory(GraveMarkers::GraveRecord* pGraveReco
 		m_nearestGrave = pGraveRecord;
 }
 
+bool Raven_SensoryMemory::seeGrave()const
+{
+	return m_nearestGrave != nullptr;
+}
+
+GraveMarkers::GraveRecord* Raven_SensoryMemory::GetGraveRecord()const
+{
+	return m_nearestGrave;
+}
+
 //------------------------ GetListOfRecentlySensedOpponents -------------------
 //
 //  returns a list of the bots that have been sensed recently

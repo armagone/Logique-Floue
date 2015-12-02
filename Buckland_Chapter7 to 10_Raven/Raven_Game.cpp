@@ -46,6 +46,8 @@ Raven_Game::Raven_Game():m_pSelectedBot(NULL),
 {
   //load in the default map
   LoadMap(script->GetString("StartMap"));
+
+  //GetMap()->AddTeam_Giver(1, 9, Vector2D(20, 20), 20);
 }
 
 
@@ -165,10 +167,19 @@ void Raven_Game::Update()
     {
 
       //create a grave
+
+		
 		GraveMarkers::GraveRecord grave = m_pGraveMarkers->AddGrave((*curBot)->Pos(), (*curBot)->GetTeamId(), (*curBot)->GetWeaponSys()->GetCurrentWeaponId());
 
 		GraveMarkers::GraveRecord* gravePtr = &grave;
 
+		if ((*curBot)->GetWeaponSys()->GetCurrentWeaponId() != 0)
+		{
+			GetMap()->AddTeam_Giver((*curBot)->GetTeamId(), (*curBot)->GetWeaponSys()->GetCurrentWeaponId(), (*curBot)->Pos(), (*curBot)->GetPathPlanner()->GetClosestNodeToPosition((*curBot)->Pos()), grave);
+		}
+			
+
+		
 		std::list<Raven_Bot*>::iterator curBot2 = m_Bots.begin();
 		for (curBot2; curBot2 != m_Bots.end(); ++curBot2)
 		{
@@ -180,7 +191,7 @@ void Raven_Game::Update()
 					(*curBot2)->ID(),
 					Msg_IWasKilledAndIHadWeapons,
 					(void*)gravePtr);
-
+				
 				//debug_con << "Bot " << ttos((*curBot)->ID()) << " : I'm dead : team (" << ttos(gravePtr->teamId) << ") ";
 			}
 			

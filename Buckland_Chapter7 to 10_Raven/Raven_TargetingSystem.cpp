@@ -54,6 +54,11 @@ bool Raven_TargetingSystem::isTargetShootable()const
 	return m_pOwner->GetSensoryMem()->isOpponentShootable(m_pCurrentTarget);
 }
 
+bool Raven_TargetingSystem::seeGrave()const
+{
+	return m_pOwner->GetSensoryMem()->seeGrave();
+}
+
 Vector2D Raven_TargetingSystem::GetLastRecordedPosition()const
 {
 	return m_pOwner->GetSensoryMem()->GetLastRecordedPositionOfOpponent(m_pCurrentTarget);

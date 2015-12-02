@@ -49,9 +49,7 @@ private:
   Vector2D                            m_vDestinationPos;
 
 
-  //returns the index of the closest visible and unobstructed graph node to
-  //the given position
-  int   GetClosestNodeToPosition(Vector2D pos)const;
+
 
   //smooths a path by removing extraneous edges. (may not remove all
   //extraneous edges)
@@ -96,6 +94,11 @@ public:
   //also makes use of the pre-calculated lookup table. Returns -1 if no active
   //trigger found
   double      GetCostToClosestItem(unsigned int GiverType)const;
+
+
+  //returns the index of the closest visible and unobstructed graph node to
+  //the given position
+  int   GetClosestNodeToPosition(Vector2D pos)const;
 
   
   //the path manager calls this to iterate once though the search cycle

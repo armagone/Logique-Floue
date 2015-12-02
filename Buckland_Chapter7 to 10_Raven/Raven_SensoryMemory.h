@@ -107,6 +107,8 @@ public:
 	//this method iterates through all the opponents in the game world and 
 	//updates the records of those that are in the owner's FOV
 	void     UpdateVision();
+	bool     seeGrave()const;
+	GraveMarkers::GraveRecord* GetGraveRecord()const;
 
 	bool     isOpponentShootable(Raven_Bot* pOpponent)const;
 	bool     isOpponentWithinFOV(Raven_Bot* pOpponent)const;

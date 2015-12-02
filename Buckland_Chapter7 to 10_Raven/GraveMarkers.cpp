@@ -57,16 +57,14 @@ void GraveMarkers::Render()
 
     gdi->BrownPen();
     gdi->ClosedShape(m_vecRIPVBTrans);
-	if (it->teamId == 1) gdi->TextColor(0, 0, 200);
+
+	// Moved into Trigger_TeamGiver :
+	/*if (it->teamId == 1) gdi->TextColor(0, 0, 200);
 	else if (it->teamId == 2) gdi->TextColor(0, 200, 0);
 	else gdi->TextColor(133, 90, 0);
     
-	gdi->TextAtPos(it->Position.x - 10, it->Position.y - 5, "RIP");
-	if (it->lastWeaponUsed != 0)
-	{
-		gdi->TextColor(133, 90, 0);
-		gdi->TextAtPos(it->Position.x - 5, it->Position.y + 8, (ttos(it->lastWeaponUsed)));
-	}
+	gdi->TextAtPos(it->Position.x - 10, it->Position.y - 5, "RIP");*/
+	
   }
 }
 
